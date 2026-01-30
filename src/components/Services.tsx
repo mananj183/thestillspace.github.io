@@ -26,7 +26,7 @@ const services = [
 
 const Services = () => {
     return (
-        <section className="section" style={{ backgroundColor: 'var(--bg-primary)' }}>
+        <section id="services" className="section" style={{ backgroundColor: 'var(--bg-primary)' }}>
             <div className="container">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}

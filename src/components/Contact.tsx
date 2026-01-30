@@ -29,7 +29,7 @@ const Contact = () => {
     };
 
     return (
-        <section className="section" style={{ backgroundColor: 'var(--bg-secondary)' }}>
+        <section id="contact" className="section" style={{ backgroundColor: 'var(--bg-secondary)' }}>
             <div className="container">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}

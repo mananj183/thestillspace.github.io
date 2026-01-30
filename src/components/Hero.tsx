@@ -1,11 +1,27 @@
-import { motion } from 'framer-motion';
-import { NavLink } from 'react-router-dom';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { useRef } from 'react';
 import { ArrowRight } from 'lucide-react';
 
 const Hero = () => {
+    const containerRef = useRef(null);
+    const { scrollYProgress } = useScroll({
+        target: containerRef,
+        offset: ["start start", "end start"]
+    });
+
+    const textY = useTransform(scrollYProgress, [0, 1], [0, 200]);
+    const textOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+    const svgY = useTransform(scrollYProgress, [0, 1], [0, -100]);
+    const svgScale = useTransform(scrollYProgress, [0, 1], [1, 1.2]);
+
+    const handleScrollToContact = (e: React.MouseEvent) => {
+        e.preventDefault();
+        document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
+    };
+
     return (
-        <section className="section" style={{
-            minHeight: '90vh',
+        <section id="hero" ref={containerRef} className="section" style={{
+            minHeight: '100vh',
             display: 'flex',
             alignItems: 'center',
             position: 'relative',
@@ -16,12 +32,13 @@ const Hero = () => {
 
                 {/* Text Content */}
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
+                    style={{ y: textY, opacity: textOpacity }}
+                    initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
                 >
                     <h1 style={{
-                        fontSize: '3.5rem',
+                        fontSize: 'clamp(2.5rem, 5vw, 4rem)',
                         fontWeight: 800,
                         lineHeight: 1.2,
                         marginBottom: '1.5rem',
@@ -37,13 +54,23 @@ const Hero = () => {
                     }}>
                         Professional clinical psychology services to guide you through life's challenges with compassion and evidence-based care.
                     </p>
-                    <NavLink to="/contact" className="btn btn-primary">
+                    <a href="#contact" onClick={handleScrollToContact} className="btn btn-primary" style={{ textDecoration: 'none' }}>
                         Book a Consultation <ArrowRight size={20} style={{ marginLeft: '0.5rem' }} />
-                    </NavLink>
+                    </a>
                 </motion.div>
 
                 {/* Animation Area */}
-                <div style={{ position: 'relative', height: '500px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <motion.div
+                    style={{
+                        y: svgY,
+                        scale: svgScale,
+                        position: 'relative',
+                        height: '500px',
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center'
+                    }}
+                >
                     <motion.svg
                         viewBox="0 0 200 200"
                         xmlns="http://www.w3.org/2000/svg"
@@ -102,7 +129,7 @@ const Hero = () => {
                             }}
                         />
                     </motion.svg>
-                </div>
+                </motion.div>
             </div>
 
             <style>{`

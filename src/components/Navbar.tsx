@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { NavLink } from 'react-router-dom';
 import { Menu, X, Sun, Moon } from 'lucide-react';
 import { useTheme } from '../utils/theme';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -11,11 +10,20 @@ const Navbar = () => {
     const toggleMenu = () => setIsOpen(!isOpen);
 
     const navLinks = [
-        { name: 'Home', path: '/' },
-        { name: 'About', path: '/about' },
-        { name: 'Services', path: '/services' },
-        { name: 'Contact', path: '/contact' },
+        { name: 'Home', path: '#hero' },
+        { name: 'About', path: '#about' },
+        { name: 'Services', path: '#services' },
+        { name: 'Contact', path: '#contact' },
     ];
+
+    const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
+        e.preventDefault();
+        setIsOpen(false);
+        const element = document.querySelector(path);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
 
     return (
         <nav style={{
@@ -27,24 +35,33 @@ const Navbar = () => {
             backdropFilter: 'blur(8px)',
         }}>
             <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '4rem' }}>
-                <NavLink to="/" style={{ fontSize: '1.25rem', fontWeight: 'bold', color: 'var(--accent)' }}>
+                <a
+                    href="#hero"
+                    onClick={(e) => handleNavClick(e, '#hero')}
+                    style={{ fontSize: '1.25rem', fontWeight: 'bold', color: 'var(--accent)', textDecoration: 'none' }}
+                >
                     Serenity Minds
-                </NavLink>
+                </a>
 
                 {/* Desktop Menu */}
                 <div className="desktop-menu" style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
                     {navLinks.map((link) => (
-                        <NavLink
+                        <a
                             key={link.name}
-                            to={link.path}
-                            style={({ isActive }) => ({
-                                color: isActive ? 'var(--accent)' : 'var(--text-primary)',
-                                fontWeight: isActive ? 600 : 400,
+                            href={link.path}
+                            onClick={(e) => handleNavClick(e, link.path)}
+                            style={{
+                                color: 'var(--text-primary)',
+                                fontWeight: 400,
                                 transition: 'color 0.2s',
-                            })}
+                                cursor: 'pointer',
+                                textDecoration: 'none'
+                            }}
+                            onMouseEnter={(e) => e.currentTarget.style.color = 'var(--accent)'}
+                            onMouseLeave={(e) => e.currentTarget.style.color = 'var(--text-primary)'}
                         >
                             {link.name}
-                        </NavLink>
+                        </a>
                     ))}
                     <button onClick={toggleTheme} aria-label="Toggle theme" style={{ padding: '0.5rem', color: 'var(--text-primary)' }}>
                         {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
@@ -77,18 +94,20 @@ const Navbar = () => {
                     >
                         <div className="container" style={{ display: 'flex', flexDirection: 'column', padding: '1rem 0' }}>
                             {navLinks.map((link) => (
-                                <NavLink
+                                <a
                                     key={link.name}
-                                    to={link.path}
-                                    onClick={() => setIsOpen(false)}
-                                    style={({ isActive }) => ({
+                                    href={link.path}
+                                    onClick={(e) => handleNavClick(e, link.path)}
+                                    style={{
                                         padding: '0.75rem 0',
-                                        color: isActive ? 'var(--accent)' : 'var(--text-primary)',
-                                        fontWeight: isActive ? 600 : 400,
-                                    })}
+                                        color: 'var(--text-primary)',
+                                        fontWeight: 400,
+                                        cursor: 'pointer',
+                                        textDecoration: 'none'
+                                    }}
                                 >
                                     {link.name}
-                                </NavLink>
+                                </a>
                             ))}
                         </div>
                     </motion.div>
