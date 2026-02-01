@@ -4,6 +4,7 @@ import path from 'path'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: '/thestillspace.github.io/',
   plugins: [react()],
   resolve: {
     alias: {
