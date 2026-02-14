@@ -1,29 +1,39 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
 
 :root {
-  /* Light Theme (Default) */
-  --bg-primary: #f8fafc;
-  --bg-secondary: #ffffff;
-  --text-primary: #334155;
-  --text-secondary: #64748b;
-  --accent: #2e8b57;
-  /* Sea Green - calming, professional */
-  --accent-hover: #3cb371;
+  /* Light Theme (Arshita Palette) */
+  --bg-primary: #FFFAFA;
+  /* Snow */
+  --bg-secondary: #FFFFFF;
+  /* White - or slightly darker snow shade if needed */
+  --text-primary: #6F4E37;
+  /* Coffee */
+  --text-secondary: #8D6E63;
+  /* Lighter Coffee / Brownish Grey */
+  --accent: #B9D9EB;
+  /* Columbia Blue */
+  --accent-hover: #CFB59E;
+  /* Hazelnut */
   --border: #e2e8f0;
-  --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow: 0 4px 6px -1px rgba(111, 78, 55, 0.1), 0 2px 4px -2px rgba(111, 78, 55, 0.1);
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
 [data-theme='dark'] {
-  /* Dark Theme */
-  --bg-primary: #0f172a;
-  --bg-secondary: #1e293b;
-  --text-primary: #f1f5f9;
-  --text-secondary: #94a3b8;
-  --accent: #3cb371;
-  --accent-hover: #2e8b57;
-  --border: #334155;
-  --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.5), 0 2px 4px -2px rgb(0 0 0 / 0.5);
+  /* Dark Theme (Arshita Palette - Inverted) */
+  --bg-primary: #6F4E37;
+  /* Coffee */
+  --bg-secondary: #5D4037;
+  /* Darker Coffee */
+  --text-primary: #FFFAFA;
+  /* Snow */
+  --text-secondary: #CFB59E;
+  /* Hazelnut */
+  --accent: #B9D9EB;
+  /* Columbia Blue */
+  --accent-hover: #ffffff;
+  --border: #8D6E63;
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -2px rgba(0, 0, 0, 0.3);
 }
 
 * {

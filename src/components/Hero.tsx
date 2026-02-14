@@ -1,9 +1,12 @@
 import logoVideo from '@/assets/logo.mp4';
+import finalLightVideo from '@/assets/final-light.mp4';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import { ArrowRight } from 'lucide-react';
+import { useTheme } from '../utils/theme';
 
 const Hero = () => {
+    const { theme } = useTheme();
     const containerRef = useRef(null);
     const { scrollYProgress } = useScroll({
         target: containerRef,
@@ -71,11 +74,11 @@ const Hero = () => {
                         display: 'flex',
                         justifyContent: 'center',
                         alignItems: 'center',
-                        mixBlendMode: 'screen'
+                        mixBlendMode: theme === 'light' ? 'darken' : 'lighten'
                     }}
                 >
                     <video
-                        src={logoVideo}
+                        src={theme === 'light' ? finalLightVideo : logoVideo}
                         autoPlay
                         loop
                         muted
@@ -104,7 +107,7 @@ const Hero = () => {
           }
         }
       `}</style>
-        </section>
+        </section >
     );
 };
 
