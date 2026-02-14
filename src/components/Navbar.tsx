@@ -38,9 +38,16 @@ const Navbar = () => {
                 <a
                     href="#hero"
                     onClick={(e) => handleNavClick(e, '#hero')}
-                    style={{ fontSize: '1.25rem', fontWeight: 'bold', color: 'var(--accent)', textDecoration: 'none' }}
+                    style={{
+                        fontSize: '1.75rem',
+                        fontWeight: 700,
+                        color: 'var(--text-primary)',
+                        textDecoration: 'none',
+                        fontFamily: '"Playfair Display", serif',
+                        letterSpacing: '-0.02em'
+                    }}
                 >
-                    Serenity Minds
+                    The Still Space
                 </a>
 
                 {/* Desktop Menu */}
