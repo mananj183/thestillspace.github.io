@@ -9,7 +9,7 @@ function App() {
   return (
     <HelmetProvider>
       <Helmet>
-        <title>Serenity Minds | Clinical Psychology Services</title>
+        <title>The Still Space | By Arshita</title>
         <meta name="description" content="Find peace and balance with expert clinical psychology services. Depression, anxiety, and trauma recovery." />
       </Helmet>
       <Layout>
