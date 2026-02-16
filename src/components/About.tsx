@@ -51,14 +51,14 @@ const About = () => {
                         Nothing can replace therapy.
                     </p>
 
-                    <p>Helping people with their mental health journey is not just my profession, it’s also personal for me. The Friendly Couch started as an idea when I was just a kid. I'm thrilled that I am finally doing it!</p>
+                    <p>Helping people with their mental health journey is not just my profession, it’s also personal for me. The Still Space started as an idea when I was just a kid. I'm thrilled that I am finally doing it!</p>
 
                     <p className="highlight-text" style={{ marginTop: '1.25rem', textAlign: 'center' }}>
                         Get to know me, The Still Space.
                     </p>
                 </div>
 
-                <a href="#about" aria-label="About Me" style={{ marginTop: '2.5rem' }}>
+                <a href="#about" aria-label="About Me" style={{ alignSelf: 'center' }}>
                     <button className="btn-know-more">
                         Know more about me
                     </button>

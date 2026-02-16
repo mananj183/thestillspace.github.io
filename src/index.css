@@ -199,7 +199,8 @@ html {
   .about-content-wrapper {
     width: 65%;
     margin-top: 0;
-    /* padding-left: 1rem; */
+    align-items: flex-start;
+    padding-left: 3rem;
     /* Spacing for divider visual */
   }
 }
@@ -236,6 +237,7 @@ html {
     font-size: 1.875rem;
     /* text-3xl */
     /* padding-top: 0; */
+    text-align: left;
   }
 }
 
@@ -255,11 +257,12 @@ html {
   .about-text-block {
     font-size: 1.125rem;
     /* text-lg */
-    padding-top: 2.5rem;
+    padding-top: 2rem;
     /* pt-10 */
-    padding-left: 8rem;
-    /* px-32 approximate */
-    padding-right: 8rem;
+    padding-left: 0;
+    padding-right: 0;
+    text-align: justify;
+    max-width: 100%;
   }
 }
 
@@ -272,12 +275,12 @@ html {
 @media (min-width: 768px) {
   .highlight-text {
     margin: 1.5rem 0;
-    text-align: center;
+    text-align: left;
   }
 }
 
 .btn-know-more {
-  margin-top: 2.5rem;
+  /* margin-top: 2.5rem; */
   padding: 0.75rem 1.5rem;
   /* Default padding */
   background-color: var(--text-primary);
