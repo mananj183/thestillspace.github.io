@@ -24,19 +24,26 @@ const Hero = () => {
             alignItems: 'center',
             position: 'relative',
             overflow: 'hidden',
-            background: 'linear-gradient(to bottom, #ece6daa3, var(--bg-secondary))'
+            background: 'linear-gradient(to bottom, #ece6daa3, var(--bg-secondary))',
+            paddingTop: '6rem', /* Added top padding for mobile navbar clearance */
+            paddingBottom: '2rem'
         }}>
-            <div className="container" style={{ position: 'relative', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }}>
+            {/* Unified Motion Container */}
+            <motion.div
+                className="container hero-container"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                style={{ position: 'relative', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }}
+            >
 
                 {/* Text Content */}
                 <motion.div
                     style={{ y: textY, opacity: textOpacity }}
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
+                /* Removed individual entrance animation to unify with container */
                 >
 
-                    <h1 style={{
+                    <h1 className="hero-title" style={{
                         fontSize: 'clamp(2rem, 4vw, 3.5rem)',
                         fontWeight: 800,
                         lineHeight: 1.2,
@@ -45,7 +52,7 @@ const Hero = () => {
                     }}>
                         Where <span style={{ color: 'var(--accent)' }}>Stillness</span> Meets Healing
                     </h1>
-                    <p style={{
+                    <p className="hero-text" style={{
                         fontSize: '1.125rem',
                         color: 'var(--text-secondary)',
                         marginBottom: '2rem',
@@ -54,18 +61,6 @@ const Hero = () => {
                         In the chaos of life, finding a still space within yourself is the first step towards growth. Together, we navigate the complexities of your mind to uncover clarity, resilience, and inner peace.
                     </p>
 
-                    {/* <img
-                        src={healingTextImg}
-                        alt="Where healing begins in stillness - Healing, Clarity, Growth"
-                        style={{
-                            display: 'block',
-                            maxWidth: '100%',
-                            height: 'auto',
-                            marginBottom: '1.5rem',
-                            mixBlendMode: 'darken'
-                        }}
-                    /> */}
-
                     <a href="https://forms.gle/p3LY41jq33sCv1kq7" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ textDecoration: 'none' }}>
                         Book a Consultation <ArrowRight size={20} style={{ marginLeft: '0.5rem' }} />
                     </a>
@@ -73,6 +68,7 @@ const Hero = () => {
 
                 {/* Animation Area */}
                 <motion.div
+                    className="hero-video-wrapper"
                     style={{
                         y: svgY,
                         scale: svgScale,
@@ -91,6 +87,7 @@ const Hero = () => {
                         loop
                         muted
                         playsInline
+                        className="hero-video"
                         style={{
                             width: '100%',
                             height: 'auto',
@@ -99,19 +96,51 @@ const Hero = () => {
                         }}
                     />
                 </motion.div>
-            </div>
+            </motion.div>
 
             <style>{`
         @media (max-width: 968px) {
-          .container {
-            grid-template-columns: 1fr !important;
+          .hero-container {
+            display: flex !important;
+            flex-direction: column-reverse; /* Video Top, Text Bottom */
+            gap: 1.5rem !important;
             text-align: center;
+            height: auto;
           }
-          h1 {
-            font-size: 2.5rem !important;
+          
+          .hero-title {
+            font-size: 1.75rem !important; /* Reduced from 2.5rem */
+            margin-bottom: 1rem !important;
           }
-          p {
-            margin: 0 auto 2.5rem !important;
+
+          .hero-text {
+            font-size: 0.95rem !important;
+            margin-bottom: 1.5rem !important;
+          }
+
+          /* Video Sizing Optimization */
+          .hero-video-wrapper {
+             max-width: 60% !important; /* Significantly reduced width */
+             margin: 0 auto;
+          }
+
+          .hero-video {
+             max-height: 23vh !important; /* Limit height to fit on screen */
+          }
+          
+          #hero {
+             padding-top: 1rem !important; /* Adjust for mobile navbar */
+             align-items: flex-start !important; /* Start from top */
+             min-height: auto !important; /* Allow content to dictate height on small screens if needed, or keep 100vh */
+             height: auto;
+          }
+          
+          /* Ensure it fits in small height */
+          @media (min-height: 500px) {
+             #hero {
+                min-height: 100vh !important;
+                justify-content: center;
+             }
           }
         }
       `}</style>
