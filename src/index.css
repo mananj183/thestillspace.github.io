@@ -281,24 +281,22 @@ html {
 
 .btn-know-more {
   /* margin-top: 2.5rem; */
-  padding: 0.75rem 1.5rem;
-  /* Default padding */
+  padding: 0.75rem 2rem;
   background-color: var(--text-primary);
-  /* bg-dark-purple -> Coffee */
-  color: var(--bg-primary);
-  /* text-white -> Snow */
-  border-radius: 9999px;
-  /* rounded-full */
+  /* Coffee */
+  color: #fff;
+  border-radius: 50px;
   font-weight: 500;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 14px 0 rgba(111, 78, 55, 0.39);
   transition: all 0.3s ease;
-  white-space: nowrap;
+  border: 2px solid transparent;
 }
 
 .btn-know-more:hover {
-  background-color: var(--accent);
-  /* hover:bg-light-purple -> Columbia Blue */
+  background-color: var(--bg-primary);
   color: var(--text-primary);
-  /* hover:text-light -> Coffee */
-  transform: scale(1.05);
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  border-color: var(--text-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(111, 78, 55, 0.23);
 }
