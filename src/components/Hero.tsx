@@ -1,12 +1,11 @@
-import logoVideo from '@/assets/logo.mp4';
+
 import finalLightVideo from '@/assets/final-light.mp4';
+// import healingTextImg from '@/assets/healing_text.png';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import { ArrowRight } from 'lucide-react';
-import { useTheme } from '../utils/theme';
 
 const Hero = () => {
-    const { theme } = useTheme();
     const containerRef = useRef(null);
     const { scrollYProgress } = useScroll({
         target: containerRef,
@@ -30,7 +29,7 @@ const Hero = () => {
             alignItems: 'center',
             position: 'relative',
             overflow: 'hidden',
-            background: 'linear-gradient(to bottom, var(--bg-primary), var(--bg-secondary))'
+            background: 'linear-gradient(to bottom, #ece6daa3, var(--bg-secondary))'
         }}>
             <div className="container" style={{ position: 'relative', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }}>
 
@@ -41,6 +40,7 @@ const Hero = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
                 >
+
                     <h1 style={{
                         fontSize: 'clamp(2rem, 4vw, 3.5rem)',
                         fontWeight: 800,
@@ -48,7 +48,7 @@ const Hero = () => {
                         marginBottom: '1.5rem',
                         color: 'var(--text-primary)'
                     }}>
-                        Find Peace in the <span style={{ color: 'var(--accent)' }}>Present Moment</span>
+                        Where <span style={{ color: 'var(--accent)' }}>Stillness</span> Meets Healing
                     </h1>
                     <p style={{
                         fontSize: '1.125rem',
@@ -56,8 +56,21 @@ const Hero = () => {
                         marginBottom: '2rem',
                         maxWidth: '450px'
                     }}>
-                        Professional clinical psychology services to guide you through life's challenges with compassion and evidence-based care.
+                        In the chaos of life, finding a still space within yourself is the first step towards growth. Together, we navigate the complexities of your mind to uncover clarity, resilience, and inner peace.
                     </p>
+
+                    {/* <img
+                        src={healingTextImg}
+                        alt="Where healing begins in stillness - Healing, Clarity, Growth"
+                        style={{
+                            display: 'block',
+                            maxWidth: '100%',
+                            height: 'auto',
+                            marginBottom: '1.5rem',
+                            mixBlendMode: 'darken'
+                        }}
+                    /> */}
+
                     <a href="#contact" onClick={handleScrollToContact} className="btn btn-primary" style={{ textDecoration: 'none' }}>
                         Book a Consultation <ArrowRight size={20} style={{ marginLeft: '0.5rem' }} />
                     </a>
@@ -74,11 +87,11 @@ const Hero = () => {
                         display: 'flex',
                         justifyContent: 'center',
                         alignItems: 'center',
-                        mixBlendMode: theme === 'light' ? 'darken' : 'lighten'
+                        mixBlendMode: 'darken'
                     }}
                 >
                     <video
-                        src={theme === 'light' ? finalLightVideo : logoVideo}
+                        src={finalLightVideo}
                         autoPlay
                         loop
                         muted

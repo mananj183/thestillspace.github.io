@@ -1,11 +1,10 @@
 import { useState } from 'react';
-import { Menu, X, Sun, Moon } from 'lucide-react';
-import { useTheme } from '../utils/theme';
+import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import logoImage from '@/assets/logo.png';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
-    const { theme, toggleTheme } = useTheme();
 
     const toggleMenu = () => setIsOpen(!isOpen);
 
@@ -28,26 +27,32 @@ const Navbar = () => {
     return (
         <nav style={{
             position: 'sticky',
-            top: 0,
+            top: '0px',
             zIndex: 1000,
-            backgroundColor: 'var(--bg-primary)',
+            boxShadow: '0px 0px 4px 0px rgba(0, 0, 0, 0.2)',
+            backgroundColor: 'var(--bg-secondary)',
             borderBottom: '1px solid var(--border)',
-            backdropFilter: 'blur(8px)',
+            backdropFilter: 'blur(20px)',
         }}>
             <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '4rem' }}>
                 <a
                     href="#hero"
                     onClick={(e) => handleNavClick(e, '#hero')}
                     style={{
-                        fontSize: '1.75rem',
-                        fontWeight: 700,
-                        color: 'var(--text-primary)',
+                        display: 'flex',
+                        alignItems: 'center',
                         textDecoration: 'none',
-                        fontFamily: '"Playfair Display", serif',
-                        letterSpacing: '-0.02em'
                     }}
                 >
-                    The Still Space
+                    <img
+                        src={logoImage}
+                        alt="The Still Space"
+                        style={{
+                            height: '50px',
+                            width: 'auto',
+                            objectFit: 'contain'
+                        }}
+                    />
                 </a>
 
                 {/* Desktop Menu */}
@@ -70,16 +75,10 @@ const Navbar = () => {
                             {link.name}
                         </a>
                     ))}
-                    <button onClick={toggleTheme} aria-label="Toggle theme" style={{ padding: '0.5rem', color: 'var(--text-primary)' }}>
-                        {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
-                    </button>
                 </div>
 
                 {/* Mobile Menu Button */}
                 <div className="mobile-menu-btn" style={{ display: 'none' }}>
-                    <button onClick={toggleTheme} style={{ marginRight: '1rem', color: 'var(--text-primary)' }}>
-                        {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
-                    </button>
                     <button onClick={toggleMenu} aria-label="Toggle menu" style={{ color: 'var(--text-primary)' }}>
                         {isOpen ? <X size={24} /> : <Menu size={24} />}
                     </button>

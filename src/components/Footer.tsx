@@ -9,7 +9,7 @@ const Footer = () => {
             borderTop: '1px solid var(--border)'
         }}>
             <div className="container" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1.5rem' }}>
-                <h3 style={{ fontSize: '1.25rem', fontWeight: 'bold', color: 'var(--accent)' }}>Serenity Minds</h3>
+                <h3 style={{ fontSize: '1.25rem', fontWeight: 'bold', color: 'var(--accent)' }}>The Still Space</h3>
                 <p style={{ color: 'var(--text-secondary)', textAlign: 'center', maxWidth: '600px' }}>
                     Offering professional, compassionate therapy services to help you find balance and peace in your life.
                 </p>
@@ -21,7 +21,7 @@ const Footer = () => {
                 </div>
 
                 <div style={{ fontSize: '0.875rem', color: 'var(--text-secondary)', marginTop: '1rem' }}>
-                    &copy; {new Date().getFullYear()} Serenity Minds. All rights reserved.
+                    &copy; {new Date().getFullYear()} The Still Space. All rights reserved.
                 </div>
             </div>
         </footer>

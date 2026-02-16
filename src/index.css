@@ -19,22 +19,7 @@
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
-[data-theme='dark'] {
-  /* Dark Theme (Arshita Palette - Inverted) */
-  --bg-primary: #6F4E37;
-  /* Coffee */
-  --bg-secondary: #5D4037;
-  /* Darker Coffee */
-  --text-primary: #FFFAFA;
-  /* Snow */
-  --text-secondary: #CFB59E;
-  /* Hazelnut */
-  --accent: #B9D9EB;
-  /* Columbia Blue */
-  --accent-hover: #ffffff;
-  --border: #8D6E63;
-  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -2px rgba(0, 0, 0, 0.3);
-}
+
 
 * {
   box-sizing: border-box;
@@ -207,14 +192,14 @@ html {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 2rem;
+  /* margin-top: 2rem; */
 }
 
 @media (min-width: 768px) {
   .about-content-wrapper {
     width: 65%;
     margin-top: 0;
-    padding-left: 2rem;
+    /* padding-left: 1rem; */
     /* Spacing for divider visual */
   }
 }
@@ -242,7 +227,7 @@ html {
   /* text-2xl */
   font-weight: 600;
   text-align: center;
-  padding-top: 2.5rem;
+  /* padding-top: 2.5rem; */
   /* pt-10 */
 }
 
@@ -250,12 +235,12 @@ html {
   .about-me-title {
     font-size: 1.875rem;
     /* text-3xl */
-    padding-top: 0;
+    /* padding-top: 0; */
   }
 }
 
 .about-text-block {
-  padding: 1.25rem 2.5rem;
+  /* padding: 1.25rem 2.5rem; */
   /* px-10 pt-5 */
   font-size: 0.875rem;
   /* text-sm */

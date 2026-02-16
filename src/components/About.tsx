@@ -27,7 +27,7 @@ const About = () => {
                 </h3>
 
                 <h3 className="founder-title">
-                    Clinical Psychologist
+                    RCI Licensed Clinical Psychologist
                 </h3>
             </motion.div>
 
