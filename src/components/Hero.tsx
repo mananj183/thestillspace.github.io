@@ -17,11 +17,6 @@ const Hero = () => {
     const svgY = useTransform(scrollYProgress, [0, 1], [0, -100]);
     const svgScale = useTransform(scrollYProgress, [0, 1], [1, 1.2]);
 
-    const handleScrollToContact = (e: React.MouseEvent) => {
-        e.preventDefault();
-        document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
-    };
-
     return (
         <section id="hero" ref={containerRef} className="section" style={{
             minHeight: '100vh',
@@ -71,7 +66,7 @@ const Hero = () => {
                         }}
                     /> */}
 
-                    <a href="#contact" onClick={handleScrollToContact} className="btn btn-primary" style={{ textDecoration: 'none' }}>
+                    <a href="https://forms.gle/p3LY41jq33sCv1kq7" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ textDecoration: 'none' }}>
                         Book a Consultation <ArrowRight size={20} style={{ marginLeft: '0.5rem' }} />
                     </a>
                 </motion.div>
