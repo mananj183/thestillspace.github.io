@@ -20,7 +20,7 @@ const milestones = [
     {
         title: 'Completing my Bachelors',
         desc: 'Began the journey into psychology, learning the foundational principles of human behavior and mental processes. This degree shaped my initial understanding of the complexities of the mind.',
-        img: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&q=80&w=800',
+        img: 'https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&q=80&w=800',
         side: 'left'
     },
     {
@@ -141,28 +141,17 @@ const AboutMe = () => {
                                     viewport={{ once: true, margin: "-100px" }}
                                     transition={{ duration: 0.6, delay: 0.2 }}
                                 >
-                                    {/* Depending on screen size or side, we can structure it. In CSS we handle text alignment based on side. */}
-                                    {milestone.side === 'left' ? (
-                                        <>
-                                            <div className="milestone-img-wrapper">
-                                                <img src={milestone.img} alt={milestone.title} />
-                                            </div>
-                                            <div className="milestone-text">
-                                                <h3>{milestone.title}</h3>
-                                                <p>{milestone.desc}</p>
-                                            </div>
-                                        </>
-                                    ) : (
-                                        <>
-                                            <div className="milestone-text">
-                                                <h3>{milestone.title}</h3>
-                                                <p>{milestone.desc}</p>
-                                            </div>
-                                            <div className="milestone-img-wrapper">
-                                                <img src={milestone.img} alt={milestone.title} />
-                                            </div>
-                                        </>
-                                    )}
+                                    <div className="milestone-text-block">
+                                        <div className="milestone-text">
+                                            <h3>{milestone.title}</h3>
+                                            <p>{milestone.desc}</p>
+                                        </div>
+                                    </div>
+                                    <div className="milestone-img-block">
+                                        <div className="milestone-img-wrapper">
+                                            <img src={milestone.img} alt={milestone.title} />
+                                        </div>
+                                    </div>
                                 </motion.div>
                             </div>
                         ))}

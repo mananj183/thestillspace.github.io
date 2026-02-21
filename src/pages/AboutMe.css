@@ -54,72 +54,95 @@
 .timeline-container::after {
     content: '';
     position: absolute;
-    width: 4px;
+    width: 2px;
+    /* Made thinner */
     background-color: var(--accent);
     top: 0;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    border-radius: 2px;
+    border-radius: 1px;
 }
 
 .timeline-item {
     position: relative;
-    width: 50%;
+    width: 100%;
     padding: 2rem 0;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.timeline-left {
-    left: 0;
-    padding-right: 4rem;
-    justify-content: flex-end;
+/* Base styles for the content container holding both text and image */
+.milestone-content {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
 }
 
-.timeline-right {
-    left: 50%;
-    padding-left: 4rem;
-    justify-content: flex-start;
+/* For left side milestone (text left, image right) */
+.timeline-left .milestone-content {
+    flex-direction: row;
+    /* Text is first block, Image is second */
 }
 
+/* For right side milestone (image left, text right) */
+.timeline-right .milestone-content {
+    flex-direction: row-reverse;
+    /* Image is first block, Text is second */
+}
+
+/* The actual text block */
+.milestone-text-block {
+    width: 45%;
+    /* slightly less than 50 to leave room for the center line */
+    padding: 0 2rem;
+}
+
+.timeline-left .milestone-text-block {
+    text-align: right;
+    padding-left: 0;
+}
+
+.timeline-right .milestone-text-block {
+    text-align: left;
+    padding-right: 0;
+}
+
+/* The actual image block */
+.milestone-img-block {
+    width: 45%;
+    padding: 0 2rem;
+}
+
+.timeline-left .milestone-img-block {
+    padding-right: 0;
+}
+
+.timeline-right .milestone-img-block {
+    padding-left: 0;
+}
+
+/* The center dot */
 .timeline-item::after {
     content: '';
     position: absolute;
-    width: 24px;
-    height: 24px;
-    background-color: var(--bg-primary);
-    border: 4px solid var(--accent);
+    width: 16px;
+    /* Reduced size */
+    height: 16px;
+    /* Reduced size */
+    background-color: var(--accent);
+    /* Filled color */
+    border: 2px solid var(--bg-primary);
+    /* Slight border for separation */
     top: 50%;
-    transform: translateY(-50%);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Centered exactly on the line */
     border-radius: 50%;
     z-index: 1;
-}
-
-.timeline-left::after {
-    right: -12px;
-}
-
-.timeline-right::after {
-    left: -12px;
-}
-
-.milestone-content {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    width: 100%;
-    max-width: 450px;
-}
-
-/* In alternating design, the layout within milestone matters */
-.timeline-left .milestone-content {
-    align-items: flex-end;
-    text-align: right;
-}
-
-.timeline-right .milestone-content {
-    align-items: flex-start;
-    text-align: left;
 }
 
 .milestone-img-wrapper {
@@ -149,7 +172,7 @@
     font-weight: 600;
 }
 
-.milestone-text p {
+.milestone-text-block p {
     color: var(--text-secondary);
     line-height: 1.6;
 }
@@ -157,35 +180,38 @@
 /* Responsive Timeline */
 @media (max-width: 768px) {
     .timeline-container::after {
-        left: 31px;
+        left: 20px;
+        /* Move line to left */
+        transform: none;
     }
 
     .timeline-item {
-        width: 100%;
-        padding-left: 80px;
+        padding-left: 50px;
+        /* Make room for line */
         padding-right: 0;
-    }
-
-    .timeline-left {
-        padding-right: 0;
-    }
-
-    .timeline-right {
-        left: 0;
-        padding-left: 80px;
+        margin-bottom: 2rem;
     }
 
     .timeline-item::after {
-        left: 19px;
-    }
-
-    .timeline-left::after {
-        right: auto;
+        left: 20px;
+        /* Move dot to match line */
+        transform: translate(-50%, -50%);
     }
 
     .milestone-content {
+        flex-direction: column !important;
+        /* Stack text and image on mobile */
         align-items: flex-start !important;
+    }
+
+    .milestone-text-block,
+    .milestone-img-block {
+        width: 100%;
+        padding: 0 !important;
         text-align: left !important;
-        max-width: 100%;
+    }
+
+    .milestone-img-block {
+        margin-top: 1.5rem;
     }
 }
