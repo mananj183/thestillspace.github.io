@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { Instagram, Linkedin } from 'lucide-react';
 import ImageCarousel from '../components/ImageCarousel';
 import './AboutMe.css';
 
@@ -83,6 +84,46 @@ const AboutMe = () => {
                         <p>
                             My journey as an RCI Licensed Clinical Psychologist has been driven by a passion for understanding the human mind and a deep empathy for those navigating mental hardship. Together, we can find a way forward.
                         </p>
+                        <div style={{ display: 'flex', gap: '1rem', marginTop: '2rem' }}>
+                            <a
+                                href="#"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="btn"
+                                style={{
+                                    background: 'linear-gradient(45deg, rgb(64, 93, 230), rgb(88, 81, 219), rgb(131, 58, 180), rgb(193, 53, 132), rgb(225, 48, 108), rgb(253, 29, 29))',
+                                    color: 'white',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    gap: '0.5rem',
+                                    padding: '0.75rem 1.5rem',
+                                    borderRadius: '8px',
+                                    textDecoration: 'none'
+                                }}
+                            >
+                                <Instagram size={20} />
+                                <span style={{ fontFamily: "'Grand Hotel', cursive", fontSize: '1.2rem', lineHeight: 1 }}>Instagram</span>
+                            </a>
+                            <a
+                                href="#"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="btn"
+                                style={{
+                                    backgroundColor: '#0A66C2',
+                                    color: 'white',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    gap: '0.5rem',
+                                    padding: '0.75rem 1.5rem',
+                                    borderRadius: '8px',
+                                    textDecoration: 'none'
+                                }}
+                            >
+                                <Linkedin size={20} />
+                                <span style={{ fontWeight: 500 }}>LinkedIn</span>
+                            </a>
+                        </div>
                     </motion.div>
                 </div>
             </section>
