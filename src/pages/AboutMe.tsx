@@ -77,7 +77,7 @@ const AboutMe = () => {
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
                     >
-                        <h2 className="about-title">Introduction</h2>
+                        <h2 className="about-title">Arshita Sharma</h2>
                         <p>
                             Hi, I am Arshita. Welcome to The Still Space. I created this practice with a singular vision: to help people find clarity and peace amid life's chaotic turbulence. We all need a safe harbor sometimes.
                         </p>
