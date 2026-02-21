@@ -1,10 +1,13 @@
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useNavigate, useLocation } from 'react-router-dom';
 import logoImage from '@/assets/logo.png';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const navigate = useNavigate();
+    const location = useLocation();
 
     const toggleMenu = () => setIsOpen(!isOpen);
 
@@ -18,9 +21,19 @@ const Navbar = () => {
     const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
         e.preventDefault();
         setIsOpen(false);
-        const element = document.querySelector(path);
-        if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
+        if (location.pathname !== '/') {
+            navigate('/' + path);
+            setTimeout(() => {
+                const element = document.querySelector(path);
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                }
+            }, 100);
+        } else {
+            const element = document.querySelector(path);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
         }
     };
 

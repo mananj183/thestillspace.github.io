@@ -1,7 +1,9 @@
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import arshooImage from '@/assets/arshoo.jpg';
 
 const About = () => {
+    const navigate = useNavigate();
     return (
         <section className="about-section" id="about" aria-label="About Me">
             {/* Left Column: Image & Name */}
@@ -58,11 +60,9 @@ const About = () => {
                     </p>
                 </div>
 
-                <a href="#about" aria-label="About Me" style={{ alignSelf: 'center' }}>
-                    <button className="btn-know-more">
-                        Know more about me
-                    </button>
-                </a>
+                <button className="btn-know-more" style={{ alignSelf: 'center' }} onClick={() => navigate('/about-me')} aria-label="About Me">
+                    Know more about me
+                </button>
             </motion.div>
         </section>
     );
