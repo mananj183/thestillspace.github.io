@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import Layout from './components/Layout';
 import Hero from './components/Hero';
@@ -23,7 +23,7 @@ function App() {
         <title>The Still Space | By Arshita</title>
         <meta name="description" content="Find peace and balance with expert clinical psychology services. Depression, anxiety, and trauma recovery." />
       </Helmet>
-      <Router basename="/thestillspace.github.io/">
+      <Router>
         <Layout>
           <Routes>
             <Route path="/" element={<Home />} />
