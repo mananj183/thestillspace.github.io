@@ -11,16 +11,16 @@ describe('AboutMe page', () => {
       </MemoryRouter>
     );
     expect(screen.getByRole('heading', { name: /arshita sharma/i })).toBeInTheDocument();
-    expect(screen.getByText(/welcome to the still space/i)).toBeInTheDocument();
+    expect(screen.getByText(/I've worked with adolescents and adults/i)).toBeInTheDocument();
   });
 
-  it('renders the My Story section', () => {
+  it('renders the who I am outside the therapy room section', () => {
     render(
       <MemoryRouter>
         <AboutMe />
       </MemoryRouter>
     );
-    expect(screen.getByRole('heading', { name: /my story/i })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: /who i am outside the therapy room/i })).toBeInTheDocument();
   });
 
   it('renders all five milestones', () => {

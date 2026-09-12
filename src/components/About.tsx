@@ -53,11 +53,10 @@ const About = () => {
                         Nothing can replace therapy.
                     </p>
 
-                    <p>Helping people with their mental health journey is not just my profession, it’s also personal for me. The Still Space started as an idea when I was just a kid. I'm thrilled that I am finally doing it!</p>
-
-                    <p className="highlight-text" style={{ marginTop: '1.25rem', textAlign: 'center' }}>
-                        Get to know me, The Still Space.
+                    <p>
+                        Therapy at The Still Space is to pause, make sense of your experiences, and build a kinder relationship with yourself without judgment or pressure to “have it all figured out.”
                     </p>
+
                 </div>
 
                 <button className="btn-know-more" onClick={() => navigate('/about-me')} aria-label="About Me">

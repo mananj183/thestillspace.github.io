@@ -79,10 +79,7 @@ const AboutMe = () => {
                     >
                         <h2 className="about-title">Arshita Sharma</h2>
                         <p>
-                            Hi, I am Arshita. Welcome to The Still Space. I created this practice with a singular vision: to help people find clarity and peace amid life's chaotic turbulence. We all need a safe harbor sometimes.
-                        </p>
-                        <p>
-                            My journey as an RCI Licensed Clinical Psychologist has been driven by a passion for understanding the human mind and a deep empathy for those navigating mental hardship. Together, we can find a way forward.
+                            Hi! My name is Arshita Sharma. I've worked with adolescents and adults facing a wide range of emotional and psychological concerns, including individuals navigating high distress, self-harm, addiction recovery, and complex trauma. These experiences have shaped a therapeutic style that is compassionate, collaborative, and grounded in real-life challenges rather than one-size-fits-all solutions.
                         </p>
                         <div style={{ display: 'flex', gap: '1rem', marginTop: '2rem' }}>
                             <a
@@ -128,60 +125,6 @@ const AboutMe = () => {
                 </div>
             </section>
 
-            {/* Section 2: Story */}
-            <section className="section" id="about-story" style={{ backgroundColor: 'var(--bg-secondary)' }}>
-                <div className="container about-me-grid">
-                    <motion.div
-                        className="about-text" style={{ order: 1 }}
-                        initial={{ opacity: 0, x: -50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8 }}
-                    >
-                        <h2 className="about-title">My Story</h2>
-                        <p>
-                            Growing up, I saw people around me struggle with their mental health. I knew that it was hard but realized that it was even more challenging without professional support. Nothing can replace therapy.
-                        </p>
-                        <p>
-                            Helping people with their mental health journey is not just my profession, it’s also personal for me. The Still Space started as an idea when I was just a kid. I'm thrilled that I am finally doing it and helping people uncover their inherent resilience!
-                        </p>
-                    </motion.div>
-                    <motion.div
-                        className="about-me-carousel-wrapper" style={{ order: 2 }}
-                        initial={{ opacity: 0, x: 50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8 }}
-                    >
-                        <ImageCarousel images={storyImages} interval={5000} />
-                    </motion.div>
-                </div>
-            </section>
-
-            {/* Section 3: Outside the Therapy Room */}
-            <section className="section" id="about-beyond-therapy" style={{ backgroundColor: 'var(--bg-primary)' }}>
-                <div className="container" style={{ textAlign: 'center' }}>
-                    <motion.h2
-                        className="about-title"
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8 }}
-                    >
-                        Who I am outside the therapy room
-                    </motion.h2>
-                    <motion.p
-                        className="outside-text"
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8, delay: 0.1 }}
-                    >
-                        Outside of therapy, I'm someone who finds joy in the little things&mdash;cooking comforting meals, exploring new places, dancing, getting lost in a good book, and spending time on my yoga mat or at the gym. These moments keep me grounded and remind me of the importance of balance, curiosity, and caring for ourselves in everyday life.
-                    </motion.p>
-                </div>
-            </section>
-
             {/* Section 4: How I Work */}
             <section className="section" id="about-approach" style={{ backgroundColor: 'var(--bg-secondary)' }}>
                 <div className="container about-me-grid">
@@ -193,9 +136,6 @@ const AboutMe = () => {
                         transition={{ duration: 0.8 }}
                     >
                         <h2 className="about-title">How I Work</h2>
-                        <p>
-                            I'm Arshita Sharma, an RCI-licensed Clinical Psychologist with over 2.5 years of professional experience and extensive clinical training across hospitals, rehabilitation settings, crisis intervention, and psychotherapy. I've worked with adolescents and adults facing a wide range of emotional and psychological concerns, including individuals navigating high distress, self-harm, addiction recovery, and complex trauma. These experiences have shaped a therapeutic style that is compassionate, collaborative, and grounded in real-life challenges rather than one-size-fits-all solutions.
-                        </p>
                         <p>
                             My work is trauma-informed and evidence-based, but above all, it is human. I value empathy, attunement, honesty, and creating a relationship where you feel understood and supported.
                         </p>
@@ -225,6 +165,32 @@ const AboutMe = () => {
                             <li>Relationship and interpersonal difficulties</li>
                             <li>Identity, life transitions, and belonging</li>
                         </ul>
+                    </motion.div>
+                </div>
+            </section>
+            {/* Section 2: Story */}
+            <section className="section" id="about-story" style={{ backgroundColor: 'var(--bg-secondary)' }}>
+                <div className="container about-me-grid">
+                    <motion.div
+                        className="about-me-carousel-wrapper" style={{ order: 1 }}
+                        initial={{ opacity: 0, x: 50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8 }}
+                    >
+                        <ImageCarousel images={storyImages} interval={5000} />
+                    </motion.div>
+                    <motion.div
+                        className="about-text" style={{ order: 2 }}
+                        initial={{ opacity: 0, x: -50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8 }}
+                    >
+                        <h2 className="about-title">Who I am outside the therapy room</h2>
+                        <p>
+                            Outside of therapy, I'm someone who finds joy in the little things&mdash;cooking comforting meals, exploring new places, dancing, getting lost in a good book, and spending time on my yoga mat or at the gym. These moments keep me grounded and remind me of the importance of balance, curiosity, and caring for ourselves in everyday life.
+                        </p>
                     </motion.div>
                 </div>
             </section>
