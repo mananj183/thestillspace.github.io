@@ -60,7 +60,15 @@ const About = () => {
                 </div>
 
                 <button className="btn-know-more" onClick={() => navigate('/about-me')} aria-label="About Me">
-                    Know more about me
+                    <span className="btn-know-more-label">Know more about me</span>
+                    <svg
+                        className="btn-know-more-arrow"
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                        focusable="false"
+                    >
+                        <path d="M5 12h14M13 6l6 6-6 6" />
+                    </svg>
                 </button>
             </motion.div>
         </section>
