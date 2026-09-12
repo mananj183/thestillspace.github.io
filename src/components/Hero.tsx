@@ -24,7 +24,7 @@ const Hero = () => {
             alignItems: 'center',
             position: 'relative',
             overflow: 'hidden',
-            background: 'linear-gradient(to bottom, #ece6daa3, var(--bg-secondary))',
+            background: 'linear-gradient(to bottom, #EDF0E4, var(--bg-secondary))',
             paddingTop: '6rem', /* Added top padding for mobile navbar clearance */
             paddingBottom: '2rem'
         }}>

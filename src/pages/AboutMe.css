@@ -134,7 +134,7 @@
     /* Reduced size */
     background-color: var(--accent);
     /* Filled color */
-    border: 2px solid var(--bg-primary);
+    border: 2px solid var(--bg-alt);
     /* Slight border for separation */
     top: 50%;
     left: 50%;

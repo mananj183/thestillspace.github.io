@@ -60,7 +60,7 @@ const About = () => {
                     </p>
                 </div>
 
-                <button className="btn-know-more" style={{ alignSelf: 'center' }} onClick={() => navigate('/about-me')} aria-label="About Me">
+                <button className="btn-know-more" onClick={() => navigate('/about-me')} aria-label="About Me">
                     Know more about me
                 </button>
             </motion.div>

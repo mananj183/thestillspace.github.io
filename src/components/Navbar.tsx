@@ -82,7 +82,7 @@ const Navbar = () => {
                                 cursor: 'pointer',
                                 textDecoration: 'none'
                             }}
-                            onMouseEnter={(e) => e.currentTarget.style.color = 'var(--accent)'}
+                            onMouseEnter={(e) => e.currentTarget.style.color = 'var(--accent-strong)'}
                             onMouseLeave={(e) => e.currentTarget.style.color = 'var(--text-primary)'}
                         >
                             {link.name}

@@ -86,7 +86,7 @@ const AboutMe = () => {
                         </p>
                         <div style={{ display: 'flex', gap: '1rem', marginTop: '2rem' }}>
                             <a
-                                href="#"
+                                href="https://www.instagram.com"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="btn"
@@ -105,7 +105,7 @@ const AboutMe = () => {
                                 <span style={{ fontFamily: "'Grand Hotel', cursive", fontSize: '1.2rem', lineHeight: 1 }}>Instagram</span>
                             </a>
                             <a
-                                href="#"
+                                href="https://www.linkedin.com"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="btn"
@@ -159,7 +159,7 @@ const AboutMe = () => {
             </section>
 
             {/* Section 3: Timeline */}
-            <section className="section" id="about-timeline">
+            <section className="section" id="about-timeline" style={{ backgroundColor: 'var(--bg-alt)' }}>
                 <div className="container">
                     <motion.h2
                         className="about-title"

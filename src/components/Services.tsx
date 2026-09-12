@@ -26,7 +26,7 @@ const services = [
 
 const Services = () => {
     return (
-        <section id="services" className="section" style={{ backgroundColor: 'var(--bg-primary)' }}>
+        <section id="services" className="section" style={{ backgroundColor: 'var(--bg-alt)' }}>
             <div className="container">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -69,7 +69,7 @@ const Services = () => {
                                 color: 'var(--accent)',
                                 marginBottom: '1.5rem',
                                 padding: '1rem',
-                                backgroundColor: 'rgba(46, 139, 87, 0.1)',
+                                backgroundColor: 'var(--accent-soft)',
                                 borderRadius: '50%'
                             }}>
                                 {service.icon}

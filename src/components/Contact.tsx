@@ -141,7 +141,7 @@ const Contact = () => {
                             <motion.p
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
-                                style={{ color: 'var(--accent)', marginTop: '0.5rem' }}
+                                style={{ color: 'var(--accent-strong)', marginTop: '0.5rem' }}
                             >
                                 Thank you! Your message has been sent.
                             </motion.p>
