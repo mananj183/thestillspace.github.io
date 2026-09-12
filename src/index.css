@@ -398,6 +398,12 @@ button {
     width: min(400px, 100%);
   }
 
+  .blob-arshita {
+    width: 80%;
+    height: 80%;
+    border: 6px solid var(--accent);
+  }
+
   .founder-name {
     font-size: 1.375rem;
   }
