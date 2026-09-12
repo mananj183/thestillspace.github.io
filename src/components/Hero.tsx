@@ -61,8 +61,8 @@ const Hero = () => {
                         At The Still Space, I believe healing doesn't begin with fixing yourself &mdash; it begins with feeling safe enough to slow down, be heard, and be yourself. I created this space for people who are carrying anxiety, trauma, grief, overwhelming emotions, or simply the weight of trying to hold everything together.
                     </p>
 
-                    <a href="https://forms.gle/p3LY41jq33sCv1kq7" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ textDecoration: 'none' }}>
-                        Book a Consultation <ArrowRight size={20} style={{ marginLeft: '0.5rem' }} />
+                    <a href="https://forms.gle/p3LY41jq33sCv1kq7" target="_blank" rel="noopener noreferrer" className="btn-consult" style={{ textDecoration: 'none' }}>
+                        Book a Consultation <ArrowRight size={20} className="btn-consult-arrow" />
                     </a>
                 </motion.div>
 

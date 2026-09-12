@@ -130,6 +130,76 @@ button {
   color: var(--accent-strong);
 }
 
+/* Book a Consultation: filled gradient pill with glass sheen and idle float.
+   Deliberately distinct from the minimal serif "know more" text link. */
+.btn-consult {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  position: relative;
+  overflow: hidden;
+  padding: 0.85rem 2.1rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--teal-accent) 0%, var(--accent-strong) 100%);
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  box-shadow: 0 10px 24px rgba(82, 110, 59, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  animation: btn-consult-float 3.5s ease-in-out infinite;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-consult::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(105deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+  transform: translateX(-160%) skewX(-20deg);
+  transition: transform 0.8s ease;
+}
+
+.btn-consult:hover::before {
+  transform: translateX(280%) skewX(-20deg);
+}
+
+.btn-consult:hover {
+  animation-play-state: paused;
+  transform: translateY(-3px);
+  box-shadow: 0 14px 32px rgba(82, 110, 59, 0.42), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.btn-consult:active {
+  transform: translateY(-1px);
+}
+
+.btn-consult:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.btn-consult-arrow {
+  transition: transform 0.3s ease;
+}
+
+.btn-consult:hover .btn-consult-arrow {
+  transform: translateX(5px);
+}
+
+@keyframes btn-consult-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
 /* Smooth Scrolling */
 
 /* prefers-reduced-motion: calm things down */
