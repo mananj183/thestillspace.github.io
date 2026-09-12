@@ -58,7 +58,7 @@ const Hero = () => {
                         marginBottom: '2rem',
                         maxWidth: '450px'
                     }}>
-                        In the chaos of life, finding a still space within yourself is the first step towards growth. Together, we navigate the complexities of your mind to uncover clarity, resilience, and inner peace.
+                        At The Still Space, I believe healing doesn't begin with fixing yourself &mdash; it begins with feeling safe enough to slow down, be heard, and be yourself. I created this space for people who are carrying anxiety, trauma, grief, overwhelming emotions, or simply the weight of trying to hold everything together.
                     </p>
 
                     <a href="https://forms.gle/p3LY41jq33sCv1kq7" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ textDecoration: 'none' }}>
@@ -142,6 +142,25 @@ const Hero = () => {
                 justify-content: center;
              }
           }
+        }
+
+        /* Short phone landscapes: keep everything above the fold */
+        @media (max-width: 968px) and (max-height: 640px) {
+           .hero-title {
+              font-size: 1.5rem !important;
+              margin-bottom: 0.75rem !important;
+           }
+           .hero-text {
+              font-size: 0.85rem !important;
+              margin-bottom: 1.25rem !important;
+              max-width: 100% !important;
+           }
+           .hero-video-wrapper {
+              max-width: 45% !important;
+           }
+           .hero-video {
+              max-height: 16vh !important;
+           }
         }
       `}</style>
         </section >
