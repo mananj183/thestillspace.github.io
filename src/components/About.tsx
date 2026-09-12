@@ -47,7 +47,7 @@ const About = () => {
                 </h2>
 
                 <div className="about-text-block">
-                    <p>Growing up, I saw people around me struggle with their mental health. I knew that it was hard but realized that it was even more challenging without professional support.</p>
+                    <p>I'm Arshita Sharma, an RCI-licensed Clinical Psychologist with over 2.5 years of professional experience across hospitals, rehabilitation settings, crisis intervention, and psychotherapy.</p>
 
                     <p className="highlight-text">
                         Nothing can replace therapy.

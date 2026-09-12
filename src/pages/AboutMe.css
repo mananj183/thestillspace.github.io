@@ -42,6 +42,71 @@
     margin-bottom: 1rem;
 }
 
+/* Outside the Therapy Room */
+.outside-text {
+    max-width: 720px;
+    margin: 0 auto;
+    color: var(--text-secondary);
+    font-size: 1.25rem;
+    line-height: 1.8;
+}
+
+@media (max-width: 640px) {
+    .outside-text {
+        font-size: 1.0625rem;
+    }
+}
+
+/* Areas I Work With */
+.areas-card {
+    background-color: var(--bg-alt);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: var(--shadow);
+}
+
+.areas-card h3 {
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    margin-bottom: 1.25rem;
+    font-weight: 600;
+}
+
+.areas-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem 1rem;
+}
+
+@media (min-width: 640px) {
+    .areas-list {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.areas-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    color: var(--text-secondary);
+    font-size: 1.0625rem;
+    line-height: 1.5;
+}
+
+.areas-list li::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--accent);
+    flex-shrink: 0;
+    margin-top: 0.5em;
+}
+
 /* Timeline Styles */
 .timeline-container {
     position: relative;

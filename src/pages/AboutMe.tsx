@@ -158,7 +158,78 @@ const AboutMe = () => {
                 </div>
             </section>
 
-            {/* Section 3: Timeline */}
+            {/* Section 3: Outside the Therapy Room */}
+            <section className="section" id="about-beyond-therapy" style={{ backgroundColor: 'var(--bg-primary)' }}>
+                <div className="container" style={{ textAlign: 'center' }}>
+                    <motion.h2
+                        className="about-title"
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8 }}
+                    >
+                        Who I am outside the therapy room
+                    </motion.h2>
+                    <motion.p
+                        className="outside-text"
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8, delay: 0.1 }}
+                    >
+                        Outside of therapy, I'm someone who finds joy in the little things&mdash;cooking comforting meals, exploring new places, dancing, getting lost in a good book, and spending time on my yoga mat or at the gym. These moments keep me grounded and remind me of the importance of balance, curiosity, and caring for ourselves in everyday life.
+                    </motion.p>
+                </div>
+            </section>
+
+            {/* Section 4: How I Work */}
+            <section className="section" id="about-approach" style={{ backgroundColor: 'var(--bg-secondary)' }}>
+                <div className="container about-me-grid">
+                    <motion.div
+                        className="about-text"
+                        initial={{ opacity: 0, x: -50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8 }}
+                    >
+                        <h2 className="about-title">How I Work</h2>
+                        <p>
+                            I'm Arshita Sharma, an RCI-licensed Clinical Psychologist with over 2.5 years of professional experience and extensive clinical training across hospitals, rehabilitation settings, crisis intervention, and psychotherapy. I've worked with adolescents and adults facing a wide range of emotional and psychological concerns, including individuals navigating high distress, self-harm, addiction recovery, and complex trauma. These experiences have shaped a therapeutic style that is compassionate, collaborative, and grounded in real-life challenges rather than one-size-fits-all solutions.
+                        </p>
+                        <p>
+                            My work is trauma-informed and evidence-based, but above all, it is human. I value empathy, attunement, honesty, and creating a relationship where you feel understood and supported.
+                        </p>
+                        <p>
+                            I integrate approaches such as Cognitive Behavior Therapy (CBT), Acceptance and Commitment Therapy (ACT), Dialectical Behavior Therapy (DBT), Internal Family Systems (IFS), somatic practices, and Polyvagal-informed interventions, depending on what feels most helpful for you. Rather than following a rigid approach, I tailor therapy to your unique needs and goals.
+                        </p>
+                        <p>
+                            I work with adolescents, young adults, and adults seeking support for their emotional and psychological well-being.
+                        </p>
+                    </motion.div>
+                    <motion.div
+                        className="areas-card"
+                        initial={{ opacity: 0, x: 50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8 }}
+                    >
+                        <h3>Areas I work with</h3>
+                        <ul className="areas-list">
+                            <li>Trauma and complex trauma</li>
+                            <li>Grief</li>
+                            <li>Anxiety, panic attacks, and phobias</li>
+                            <li>Depression and mood-related concerns</li>
+                            <li>Emotional dysregulation</li>
+                            <li>Stress and burnout</li>
+                            <li>Self-esteem and self-worth</li>
+                            <li>Relationship and interpersonal difficulties</li>
+                            <li>Identity, life transitions, and belonging</li>
+                        </ul>
+                    </motion.div>
+                </div>
+            </section>
+
+            {/* Section 5: Timeline */}
             <section className="section" id="about-timeline" style={{ backgroundColor: 'var(--bg-alt)' }}>
                 <div className="container">
                     <motion.h2
