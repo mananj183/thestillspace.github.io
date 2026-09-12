@@ -390,6 +390,38 @@ button {
   }
 }
 
+/* Larger laptop / desktop screens: scale the About content up so it fills
+   the bigger section instead of staying at tablet size. Kept before the
+   short-height block so compact screens still win on short viewports. */
+@media (min-width: 1280px) {
+  .blob-c {
+    width: min(400px, 100%);
+  }
+
+  .founder-name {
+    font-size: 1.375rem;
+  }
+
+  .founder-title {
+    font-size: 1.25rem;
+  }
+
+  .about-me-title {
+    font-size: 2.25rem;
+    line-height: 1.25;
+  }
+
+  .about-text-block {
+    font-size: 1.25rem;
+    line-height: 1.7;
+  }
+
+  .btn-know-more {
+    padding: 1rem 3rem;
+    font-size: 1.05rem;
+  }
+}
+
 /* Short landscape / split-screen heights (e.g. 768x544): compress the
    About section so all of its content stays visible without scrolling.
    Declared last so it wins over the min-width:768px overrides above. */
