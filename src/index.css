@@ -228,6 +228,8 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 4rem);
   padding: 5rem 1.5rem;
   /* py-20 */
   background-color: var(--bg-primary);
@@ -262,6 +264,7 @@ button {
 @media (min-width: 768px) {
   .about-details {
     width: 35%;
+    justify-content: center;
   }
 }
 
@@ -278,6 +281,8 @@ button {
     width: 65%;
     margin-top: 0;
     align-items: flex-start;
+    align-self: stretch;
+    justify-content: space-evenly;
     padding-left: 3rem;
     /* Spacing for divider visual */
   }
