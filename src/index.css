@@ -570,9 +570,16 @@ button {
   margin-bottom: 1.5rem;
 }
 
+.quote-title {
+  color: var(--bg-primary);
+  text-align: center;
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin: 0 auto 3rem;
+}
+
 .quote-text {
   font-family: var(--font-heading);
-  font-size: clamp(1.9rem, 4.2vw, 3.3rem);
+  font-size: clamp(1.3rem, 3.0vw, 2.5rem);
   font-style: italic;
   font-weight: 500;
   line-height: 1.3;
@@ -588,6 +595,41 @@ button {
   text-transform: uppercase;
   color: rgba(248, 245, 241, 0.7);
   margin-top: 2.25rem;
+}
+
+.quote-nav {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 3rem;
+}
+
+.quote-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid rgba(248, 245, 241, 0.35);
+  background-color: transparent;
+  color: var(--bg-primary);
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.quote-nav-btn:hover {
+  background-color: var(--bg-primary);
+  color: var(--accent-strong);
+  border-color: var(--bg-primary);
+}
+
+.quote-nav-btn:focus-visible {
+  outline: 2px solid var(--bg-primary);
+  outline-offset: 2px;
 }
 
 /* ── Contact ──────────────────────────────────────────── */
