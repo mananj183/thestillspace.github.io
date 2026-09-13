@@ -16,16 +16,27 @@ const Navbar = () => {
     const navigate = useNavigate();
     const location = useLocation();
 
+    // Wait for the mobile menu close animation (~0.3s) to finish before
+    // scrolling, otherwise the layout shift cancels the smooth scroll and
+    // the viewport stays put on tablet/mobile browsers.
+    const CLOSE_ANIMATION_MS = 420;
+
     const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
         e.preventDefault();
-        setIsOpen(false);
+
+        const scrollToTarget = () => {
+            document.querySelector(path)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        };
+
         if (location.pathname !== '/') {
-            navigate('/' + path);
-            setTimeout(() => {
-                document.querySelector(path)?.scrollIntoView({ behavior: 'smooth' });
-            }, 100);
+            setIsOpen(false);
+            navigate('/');
+            setTimeout(scrollToTarget, CLOSE_ANIMATION_MS);
+        } else if (isOpen) {
+            setIsOpen(false);
+            setTimeout(scrollToTarget, CLOSE_ANIMATION_MS);
         } else {
-            document.querySelector(path)?.scrollIntoView({ behavior: 'smooth' });
+            scrollToTarget();
         }
     };
 

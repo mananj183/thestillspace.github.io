@@ -50,10 +50,6 @@ const About = () => {
                                 and psychotherapy.
                             </p>
 
-                            <p className="highlight-text">
-                                Nothing can replace therapy.
-                            </p>
-
                             <p>
                                 Therapy at The Still Space is to pause, make sense of your
                                 experiences, and build a kinder relationship with yourself
