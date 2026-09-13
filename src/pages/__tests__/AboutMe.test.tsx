@@ -30,9 +30,9 @@ describe('AboutMe page', () => {
       </MemoryRouter>
     );
     expect(screen.getByRole('heading', { name: /milestones/i })).toBeInTheDocument();
-    expect(screen.getByRole('heading', { name: /completing my bachelors/i })).toBeInTheDocument();
-    expect(screen.getByRole('heading', { name: /completing my masters/i })).toBeInTheDocument();
-    expect(screen.getByRole('heading', { name: /completing pdcp/i })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: /completed my bachelors/i })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: /completed my masters/i })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: /completed pdcp/i })).toBeInTheDocument();
     expect(screen.getByRole('heading', { name: /additional certifications/i })).toBeInTheDocument();
     expect(screen.getByRole('heading', { name: /my therapy style/i })).toBeInTheDocument();
   });

@@ -715,6 +715,98 @@ button {
   resize: vertical;
 }
 
+/* ── FAQ ──────────────────────────────────────────────── */
+.faq-section {
+  position: relative;
+  background-color: var(--bg-secondary);
+  padding: 6.5rem 0;
+}
+
+.faq-list {
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background-color: var(--bg-primary);
+  margin-bottom: 1rem;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.faq-item-open {
+  border-color: var(--accent);
+  box-shadow: var(--shadow-soft);
+}
+
+.faq-question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  width: 100%;
+  padding: 1.25rem 1.5rem;
+  border: none;
+  background-color: transparent;
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-align: left;
+  cursor: pointer;
+  transition: color 0.25s ease;
+}
+
+.faq-question:hover {
+  color: var(--accent);
+}
+
+.faq-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  color: var(--accent);
+  background-color: var(--bg-secondary);
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.faq-toggle svg {
+  transition: transform 0.3s ease;
+}
+
+.faq-item-open .faq-toggle {
+  background-color: var(--accent);
+  border-color: var(--accent);
+  color: var(--bg-primary);
+}
+
+.faq-item-open .faq-toggle svg {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  overflow: hidden;
+}
+
+.faq-answer p {
+  padding: 0 1.5rem 1.5rem;
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  line-height: 1.75;
+  max-width: 72ch;
+}
+
 /* ── Footer ───────────────────────────────────────────── */
 .site-footer {
   position: relative;

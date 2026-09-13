@@ -5,6 +5,7 @@ import Hero from './components/Hero';
 import About from './components/About';
 import QuoteSection from './components/QuoteSection';
 import Services from './components/Services';
+import FAQ from './components/FAQ';
 import Contact from './components/Contact';
 import AboutMe from './pages/AboutMe';
 
@@ -39,6 +40,7 @@ const Home = () => (
     <QuoteSection quotes={quotes} />
     <Services />
     <QuoteSection quotes={testimonials} title="Testimonials" />
+    <FAQ />
     <Contact />
   </>
 );
