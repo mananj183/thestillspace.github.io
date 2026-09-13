@@ -43,8 +43,8 @@ describe('AboutMe page', () => {
         <AboutMe />
       </MemoryRouter>
     );
-    expect(screen.getByRole('link', { name: /instagram/i })).toHaveAttribute('href', 'https://www.instagram.com');
-    expect(screen.getByRole('link', { name: /linkedin/i })).toHaveAttribute('href', 'https://www.linkedin.com');
+    expect(screen.getByRole('link', { name: /instagram/i })).toHaveAttribute('href', 'https://www.instagram.com/thestillspacebyarshita/');
+    expect(screen.getByRole('link', { name: /linkedin/i })).toHaveAttribute('href', 'https://www.linkedin.com/in/arshita-sharma-12a0801a9/');
     expect(container.querySelectorAll('a[href="#"]').length).toBe(0);
   });
 });

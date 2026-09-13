@@ -32,7 +32,7 @@ describe('App / Home page', () => {
     const footer = document.querySelector('footer') as HTMLElement;
     const deadLinks = footer?.querySelectorAll('a[href="#"]') ?? [];
     expect(deadLinks.length).toBe(0);
-    expect(screen.getByRole('link', { name: /email/i })).toHaveAttribute('href', 'mailto:hello@thestillspace.com');
+    expect(screen.getByRole('link', { name: /email/i })).toHaveAttribute('href', 'mailto:thestillspacebyarshita@gmail.com');
   });
 
   it('sets the <title> tag via the helmet provider', async () => {

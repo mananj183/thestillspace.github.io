@@ -1,7 +1,7 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import { ArrowRight } from 'lucide-react';
-import arshooImage from '@/assets/arshoo.jpg';
+import arshooImage from '@/assets/hero.png';
 
 const Hero = () => {
     const sectionRef = useRef<HTMLElement>(null);

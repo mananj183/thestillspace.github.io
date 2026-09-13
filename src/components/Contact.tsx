@@ -62,7 +62,7 @@ const Contact = () => {
                             </div>
                             <div>
                                 <h3>Email</h3>
-                                <p>hello@thestillspace.com</p>
+                                <p>thestillspacebyarshita@gmail.com</p>
                             </div>
                         </div>
                         <div className="contact-info-item">
@@ -71,7 +71,7 @@ const Contact = () => {
                             </div>
                             <div>
                                 <h3>Location</h3>
-                                <p>Gurgaon &middot; Online across India</p>
+                                <p>Online</p>
                             </div>
                         </div>
                     </div>

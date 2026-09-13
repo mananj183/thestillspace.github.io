@@ -83,7 +83,7 @@ const AboutMe = () => {
                         </p>
                         <div style={{ display: 'flex', gap: '1rem', marginTop: '2rem', flexWrap: 'wrap' }}>
                             <a
-                                href="https://www.instagram.com"
+                                href="https://www.instagram.com/thestillspacebyarshita/"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="btn btn-primary"
@@ -93,7 +93,7 @@ const AboutMe = () => {
                                 <span>Instagram</span>
                             </a>
                             <a
-                                href="https://www.linkedin.com"
+                                href="https://www.linkedin.com/in/arshita-sharma-12a0801a9/"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="btn btn-outline"

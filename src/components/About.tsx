@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
-import arshooImage from '@/assets/arshoo.jpg';
+import arshooImage from '@/assets/about_me.jpeg';
 
 const About = () => {
     const navigate = useNavigate();

@@ -4,15 +4,15 @@ import { Compass, Users, Wind, Shield } from 'lucide-react';
 const services = [
     {
         icon: <Compass size={26} strokeWidth={1.5} />,
-        title: 'Individual Therapy',
+        title: 'Individual Therapy For Adults',
         description:
             'One-on-one sessions to address personal challenges, mental health disorders, and personal growth.',
     },
     {
         icon: <Users size={26} strokeWidth={1.5} />,
-        title: 'Couples Counseling',
+        title: 'Therapy for Teens & Adolescents',
         description:
-            'Helping partners improve communication, resolve conflict, and strengthen their emotional bond.',
+            'Supporting young people through the challenges of adolescence and beyond.',
     },
     {
         icon: <Wind size={26} strokeWidth={1.5} />,

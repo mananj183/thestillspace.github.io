@@ -6,8 +6,8 @@ describe('Services', () => {
   it('renders the section heading and all four service cards', () => {
     render(<Services />);
     expect(screen.getByRole('heading', { name: /my approach/i })).toBeInTheDocument();
-    expect(screen.getByRole('heading', { name: /individual therapy/i })).toBeInTheDocument();
-    expect(screen.getByRole('heading', { name: /couples counseling/i })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: /individual therapy for adults/i })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: /therapy for teens & adolescents/i })).toBeInTheDocument();
     expect(screen.getByRole('heading', { name: /anxiety & stress/i })).toBeInTheDocument();
     expect(screen.getByRole('heading', { name: /trauma recovery/i })).toBeInTheDocument();
   });

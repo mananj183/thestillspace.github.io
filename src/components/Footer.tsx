@@ -5,7 +5,6 @@ const Footer = () => {
         <footer className="site-footer">
             <div className="container site-footer-inner">
                 <h2 className="footer-wordmark">The Still Space</h2>
-                <p className="footer-location">Gurgaon &middot; Online across India</p>
 
                 <div className="footer-divider" />
 
@@ -18,13 +17,13 @@ const Footer = () => {
 
                 <div className="footer-social">
                     <a
-                        href="mailto:hello@thestillspace.com"
+                        href="mailto:thestillspacebyarshita@gmail.com"
                         aria-label="Email us"
                     >
                         <Mail size={18} strokeWidth={1.5} />
                     </a>
                     <a
-                        href="https://www.instagram.com"
+                        href="https://www.instagram.com/thestillspacebyarshita/"
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="Follow us on Instagram"
@@ -32,7 +31,7 @@ const Footer = () => {
                         <Instagram size={18} strokeWidth={1.5} />
                     </a>
                     <a
-                        href="https://www.linkedin.com"
+                        href="https://www.linkedin.com/in/arshita-sharma-12a0801a9/"
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="Connect on LinkedIn"
