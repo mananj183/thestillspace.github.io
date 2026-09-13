@@ -2,49 +2,55 @@ import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Instagram, Linkedin } from 'lucide-react';
 import ImageCarousel from '../components/ImageCarousel';
+import contentImg1 from '@/assets/about_me_content_1.png';
+import contentImg2 from '@/assets/about_me_content_2.png';
+import contentImg3 from '@/assets/about_me_content_3.png';
+import outsideTherapyImg1 from '@/assets/outside_of_therapy_1.png';
+import outsideTherapyImg2 from '@/assets/outside_of_therapy_2.png';
+import outsideTherapyImg3 from '@/assets/outside_of_therapy_3.png';
 import './AboutMe.css';
 
-// Random images for placeholders
-const introImages = [
-    'https://images.unsplash.com/photo-1544027993-37dbfe43562a?auto=format&fit=crop&q=80&w=800',
-    'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800',
-    'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&q=80&w=800'
-];
+const introImages = [contentImg1, contentImg2, contentImg3];
 
-const storyImages = [
-    'https://images.unsplash.com/photo-1516534775068-ba3e7458af70?auto=format&fit=crop&q=80&w=800',
-    'https://images.unsplash.com/photo-1499209974431-9dddcece7f88?auto=format&fit=crop&q=80&w=800',
-    'https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&q=80&w=800'
-];
+const storyImages = [outsideTherapyImg1, outsideTherapyImg2, outsideTherapyImg3];
 
 const milestones = [
     {
-        title: 'Completing my Bachelors',
+        title: 'Completed my Bachelors',
         desc: 'Began the journey into psychology, learning the foundational principles of human behavior and mental processes. This degree shaped my initial understanding of the complexities of the mind.',
         img: 'https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&q=80&w=800',
         side: 'left'
     },
     {
-        title: 'Completing my Masters',
-        desc: 'Deepened my knowledge with advanced clinical psychology coursework and practical application. Research and hands-on experience became central to my growth.',
+        title: 'Completed my Masters',
+        desc: 'My Master’s at Christ University gave me the opportunity to build hands-on clinical experience across diverse mental health settings. Through internships at Mental Health Matters, Gurgaon; IHBAS, Delhi; Athena Behavioral Health, Gurugram; and Tulasi Healthcare, Gurugram, I worked with varied clinical presentations including depression, anxiety, OCD, psychosis, bipolar disorder, autism, intellectual disabilities, and substance use. These experiences helped me develop practical skills in case history taking, MSEs, psychological assessments, treatment planning, and therapeutic interventions, while giving me a broader understanding of how psychological care is approached across hospital, rehabilitation, and clinical settings.',
         img: 'https://images.unsplash.com/photo-1535982330050-f1c2fb79ff78?auto=format&fit=crop&q=80&w=800',
         side: 'right'
     },
     {
-        title: 'Completing PDCP',
-        desc: 'Earned my Post Graduate Diploma in Clinical Psychology. This rigorous program equipped me with the professional skills essential for clinical assessment and intervention.',
+        title: 'Completed PDCP at SGT University',
+        desc: 'My Professional Diploma in Clinical Psychology at SGT University gave me more than my license, it helped me transition from academic learning to hands-on clinical practice. Through supervised work with children, adolescents, adults, and older adults, I gained experience in psychological assessment, clinical formulation, therapy, crisis intervention, and family work. Training across diverse clinical and medical settings strengthened my clinical judgement and ability to understand concerns within their broader context. Most importantly, the experience helped me develop a therapeutic style grounded in evidence based therapy, empathy, active listening, collaboration, and clinical responsibility, while encouraging me to stay curious and continue learning.',
         img: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&q=80&w=800',
         side: 'left'
     },
     {
         title: 'Additional Certifications',
-        desc: 'Continuously expanding my expertise with specialized certifications in various therapeutic modalities to better serve individuals experiencing distinct challenges.',
+        desc: <>
+            <p>Trauma & Somatic Work</p>
+            <p>Polyvagal Theory • Internal Family Systems (IFS) • Somatic Trauma Treatment • Trauma-Informed Care</p>
+            <br />
+            <p>Psychotherapy & Clinical Skills</p>
+            <p>DBT Essentials • Motivational Interviewing • Anxiety, Depression & Mood Disorders</p>
+            <br />
+            <p>Suicide & Crisis Intervention</p>
+            <p>Suicide Intervention & Prevention Strategies</p>
+        </>,
         img: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=800',
         side: 'right'
     },
     {
         title: 'My Therapy Style',
-        desc: 'Developing an empathetic, structured, and client-centered approach to therapy. I prioritize creating a safe, non-judgmental space tailored to facilitate resilience and healing.',
+        desc: 'I see therapy as a collaborative space where we build enough safety to explore difficult thoughts, emotions, and patterns without judgment. Alongside empathy and validation, I also believe therapy sometimes requires honest conversations. I may gently offer feedback, notice recurring patterns, or invite you to look at things from a different perspective, to help us reflect, review progress, and move therapy forward together.',
         img: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=800',
         side: 'left'
     }
