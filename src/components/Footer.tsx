@@ -2,25 +2,46 @@ import { Instagram, Linkedin, Mail } from 'lucide-react';
 
 const Footer = () => {
     return (
-        <footer style={{
-            backgroundColor: 'var(--bg-secondary)',
-            padding: '3rem 0',
-            marginTop: 'auto',
-            borderTop: '1px solid var(--border)'
-        }}>
-            <div className="container" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1.5rem' }}>
-                <h3 style={{ fontSize: '1.25rem', fontWeight: 'bold', color: 'var(--accent-strong)' }}>The Still Space</h3>
-                <p style={{ color: 'var(--text-secondary)', textAlign: 'center', maxWidth: '600px' }}>
-                    Offering professional, compassionate therapy services to help you find balance and peace in your life.
+        <footer className="site-footer">
+            <div className="container site-footer-inner">
+                <h2 className="footer-wordmark">The Still Space</h2>
+                <p className="footer-location">Gurgaon &middot; Online across India</p>
+
+                <div className="footer-divider" />
+
+                <p className="footer-quote">
+                    &ldquo;You don&rsquo;t have to arrive with the right words.
+                    You can arrive exactly as you are.&rdquo;
                 </p>
 
-                <div style={{ display: 'flex', gap: '1.5rem' }}>
-                    <a href="mailto:contact@thestillspace.com" style={{ color: 'var(--text-secondary)' }} aria-label="Email"><Mail size={20} /></a>
-                    <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-secondary)' }} aria-label="Instagram"><Instagram size={20} /></a>
-                    <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-secondary)' }} aria-label="LinkedIn"><Linkedin size={20} /></a>
+                <div className="footer-divider" />
+
+                <div className="footer-social">
+                    <a
+                        href="mailto:hello@thestillspace.com"
+                        aria-label="Email us"
+                    >
+                        <Mail size={18} strokeWidth={1.5} />
+                    </a>
+                    <a
+                        href="https://www.instagram.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Follow us on Instagram"
+                    >
+                        <Instagram size={18} strokeWidth={1.5} />
+                    </a>
+                    <a
+                        href="https://www.linkedin.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Connect on LinkedIn"
+                    >
+                        <Linkedin size={18} strokeWidth={1.5} />
+                    </a>
                 </div>
 
-                <div style={{ fontSize: '0.875rem', color: 'var(--text-secondary)', marginTop: '1rem' }}>
+                <div className="footer-bottom">
                     &copy; {new Date().getFullYear()} The Still Space. All rights reserved.
                 </div>
             </div>

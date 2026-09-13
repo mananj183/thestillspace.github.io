@@ -1,15 +1,14 @@
 export const palette = {
-  bgPrimary: '#F7F6F1',
-  bgSecondary: '#FFFFFF',
-  bgAlt: '#EFF1E8',
-  textPrimary: '#3E4538',
-  textSecondary: '#66705B',
-  accent: '#6B8857',
-  accentStrong: '#526E3B',
-  accentHover: '#465D33',
-  accentSoft: '#E7EDDF',
-  tealAccent: '#7C9A96',
-  border: '#E2E4DA',
+  bgPrimary: '#F8F5F1',
+  bgSecondary: '#FDFBF8',
+  bgAlt: '#E8DDD2',
+  textPrimary: '#54453F',
+  textSecondary: '#6E5F58',
+  accent: '#6E4147',
+  accentStrong: '#6E4147',
+  accentHover: '#B89C88',
+  accentSoft: '#F0E2D8',
+  border: '#DAD0C6',
 } as const;
 
 export function rgbToLinear(c: number): number {

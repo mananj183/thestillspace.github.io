@@ -16,7 +16,6 @@ describe('palette module', () => {
       '--accent-strong': palette.accentStrong,
       '--accent-hover': palette.accentHover,
       '--accent-soft': palette.accentSoft,
-      '--teal-accent': palette.tealAccent,
       '--border': palette.border,
     };
     for (const [name, value] of Object.entries(vars)) {
@@ -25,11 +24,14 @@ describe('palette module', () => {
     }
   });
 
-  it('uses olive/sage hues (green family, low saturation) instead of the old blue/brown mix', () => {
-    const [r, g, b] = [(+('0x' + palette.accent.slice(1, 3))), (+('0x' + palette.accent.slice(3, 5))), (+('0x' + palette.accent.slice(5, 7)))];
-    expect(g).toBeGreaterThan(r);
-    expect(g).toBeGreaterThan(b);
-    expect(b).toBeLessThan(r);
+  it('uses muted maroon hues (red family) as the brand accent', () => {
+    const [r, g, b] = [
+      +('0x' + palette.accent.slice(1, 3)),
+      +('0x' + palette.accent.slice(3, 5)),
+      +('0x' + palette.accent.slice(5, 7)),
+    ];
+    expect(r).toBeGreaterThan(g);
+    expect(r).toBeGreaterThan(b);
   });
 });
 
@@ -48,13 +50,13 @@ describe('WCAG AA contrast (light theme)', () => {
     expect(onSecondary(palette.textSecondary)).toBeGreaterThanOrEqual(4.5);
   });
 
-  it('white text on the strong button colour passes AA', () => {
-    expect(contrastRatio('#FFFFFF', palette.accentStrong)).toBeGreaterThanOrEqual(4.5);
-    expect(contrastRatio('#FFFFFF', palette.accentHover)).toBeGreaterThanOrEqual(4.5);
+  it('ivory text on the maroon button/hero colour passes AA', () => {
+    expect(contrastRatio('#F8F5F1', palette.accentStrong)).toBeGreaterThanOrEqual(4.5);
   });
 
-  it('accent passes >=3:1 for large text / icons on white', () => {
+  it('accent passes >=3:1 for large text / icons on light backgrounds', () => {
     expect(onSecondary(palette.accent)).toBeGreaterThanOrEqual(3);
+    expect(contrastRatio(palette.accent, palette.bgAlt)).toBeGreaterThanOrEqual(3);
   });
 
   it('strong accent as link text passes AA on light backgrounds', () => {

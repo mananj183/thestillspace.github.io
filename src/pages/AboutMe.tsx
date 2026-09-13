@@ -81,44 +81,26 @@ const AboutMe = () => {
                         <p>
                             Hi! My name is Arshita Sharma. I've worked with adolescents and adults facing a wide range of emotional and psychological concerns, including individuals navigating high distress, self-harm, addiction recovery, and complex trauma. These experiences have shaped a therapeutic style that is compassionate, collaborative, and grounded in real-life challenges rather than one-size-fits-all solutions.
                         </p>
-                        <div style={{ display: 'flex', gap: '1rem', marginTop: '2rem' }}>
+                        <div style={{ display: 'flex', gap: '1rem', marginTop: '2rem', flexWrap: 'wrap' }}>
                             <a
                                 href="https://www.instagram.com"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="btn"
-                                style={{
-                                    background: 'linear-gradient(45deg, rgb(64, 93, 230), rgb(88, 81, 219), rgb(131, 58, 180), rgb(193, 53, 132), rgb(225, 48, 108), rgb(253, 29, 29))',
-                                    color: 'white',
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    gap: '0.5rem',
-                                    padding: '0.75rem 1.5rem',
-                                    borderRadius: '8px',
-                                    textDecoration: 'none'
-                                }}
+                                className="btn btn-primary"
+                                style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.8rem 1.5rem' }}
                             >
-                                <Instagram size={20} />
-                                <span style={{ fontFamily: "'Grand Hotel', cursive", fontSize: '1.2rem', lineHeight: 1 }}>Instagram</span>
+                                <Instagram size={18} />
+                                <span>Instagram</span>
                             </a>
                             <a
                                 href="https://www.linkedin.com"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="btn"
-                                style={{
-                                    backgroundColor: '#0A66C2',
-                                    color: 'white',
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    gap: '0.5rem',
-                                    padding: '0.75rem 1.5rem',
-                                    borderRadius: '8px',
-                                    textDecoration: 'none'
-                                }}
+                                className="btn btn-outline"
+                                style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.8rem 1.5rem' }}
                             >
-                                <Linkedin size={20} />
-                                <span style={{ fontWeight: 500 }}>LinkedIn</span>
+                                <Linkedin size={18} />
+                                <span>LinkedIn</span>
                             </a>
                         </div>
                     </motion.div>

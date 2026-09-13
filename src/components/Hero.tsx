@@ -1,169 +1,73 @@
-
-import finalLightVideo from '@/assets/final-light.mp4';
-// import healingTextImg from '@/assets/healing_text.png';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import { ArrowRight } from 'lucide-react';
+import arshooImage from '@/assets/arshoo.jpg';
 
 const Hero = () => {
-    const containerRef = useRef(null);
+    const sectionRef = useRef<HTMLElement>(null);
+
     const { scrollYProgress } = useScroll({
-        target: containerRef,
-        offset: ["start start", "end start"]
+        target: sectionRef,
+        offset: ['start start', 'end start']
     });
 
-    const textY = useTransform(scrollYProgress, [0, 1], [0, 200]);
-    const textOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
-    const svgY = useTransform(scrollYProgress, [0, 1], [0, -100]);
-    const svgScale = useTransform(scrollYProgress, [0, 1], [1, 1.2]);
+    const copyY = useTransform(scrollYProgress, [0, 1], [0, -60]);
+    const portraitScale = useTransform(scrollYProgress, [0, 1], [1, 1.05]);
 
     return (
-        <section id="hero" ref={containerRef} className="section" style={{
-            minHeight: '100vh',
-            display: 'flex',
-            alignItems: 'center',
-            position: 'relative',
-            overflow: 'hidden',
-            background: 'linear-gradient(to bottom, #EDF0E4, var(--bg-secondary))',
-            paddingTop: '6rem', /* Added top padding for mobile navbar clearance */
-            paddingBottom: '2rem'
-        }}>
-            {/* Unified Motion Container */}
-            <motion.div
-                className="container hero-container"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
-                style={{ position: 'relative', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }}
-            >
+        <section id="hero" ref={sectionRef} className="hero" aria-label="Welcome to The Still Space">
+            <div className="container">
+                <div className="hero-grid">
+                    {/* Text Content */}
+                    <motion.div
+                        className="hero-copy"
+                        style={{ y: copyY }}
+                        initial={{ opacity: 0, y: 24 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 1, ease: 'easeOut' }}
+                    >
+                        <p className="hero-eyebrow">The Still Space by Arshita</p>
+                        <h1 className="hero-title">
+                            A space to pause.<br />A place to understand.
+                        </h1>
+                        <p className="hero-lede">
+                            A calm, confidential room for those carrying anxiety, grief,
+                            trauma, or the quiet weight of trying to hold everything together.
+                            Healing begins when you feel safe enough to slow down, be heard,
+                            and be yourself.
+                        </p>
+                        <div className="hero-cta-row">
+                            <motion.a
+                                href="https://forms.gle/p3LY41jq33sCv1kq7"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="btn btn-ivory"
+                                whileHover={{ y: -2 }}
+                                whileTap={{ y: 0 }}
+                            >
+                                Book a session <ArrowRight size={18} aria-hidden="true" />
+                            </motion.a>
+                        </div>
+                    </motion.div>
 
-                {/* Text Content */}
-                <motion.div
-                    style={{ y: textY, opacity: textOpacity }}
-                /* Removed individual entrance animation to unify with container */
-                >
-
-                    <h1 className="hero-title" style={{
-                        fontSize: 'clamp(2rem, 4vw, 3.5rem)',
-                        fontWeight: 800,
-                        lineHeight: 1.2,
-                        marginBottom: '1.5rem',
-                        color: 'var(--text-primary)'
-                    }}>
-                        Where <span style={{ color: 'var(--accent)' }}>Stillness</span> Meets Healing
-                    </h1>
-                    <p className="hero-text" style={{
-                        fontSize: '1.125rem',
-                        color: 'var(--text-secondary)',
-                        marginBottom: '2rem',
-                        maxWidth: '450px'
-                    }}>
-                        At The Still Space, I believe healing doesn't begin with fixing yourself &mdash; it begins with feeling safe enough to slow down, be heard, and be yourself. I created this space for people who are carrying anxiety, trauma, grief, overwhelming emotions, or simply the weight of trying to hold everything together.
-                    </p>
-
-                    <a href="https://forms.gle/p3LY41jq33sCv1kq7" target="_blank" rel="noopener noreferrer" className="btn-consult" style={{ textDecoration: 'none' }}>
-                        Book a Consultation <ArrowRight size={20} className="btn-consult-arrow" />
-                    </a>
-                </motion.div>
-
-                {/* Animation Area */}
-                <motion.div
-                    className="hero-video-wrapper"
-                    style={{
-                        y: svgY,
-                        scale: svgScale,
-                        position: 'relative',
-                        width: '100%',
-                        maxWidth: '480px',
-                        display: 'flex',
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                        mixBlendMode: 'darken'
-                    }}
-                >
-                    <video
-                        src={finalLightVideo}
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        className="hero-video"
-                        style={{
-                            width: '100%',
-                            height: 'auto',
-                            maxHeight: '70vh',
-                            objectFit: 'contain'
-                        }}
-                    />
-                </motion.div>
-            </motion.div>
-
-            <style>{`
-        @media (max-width: 968px) {
-          .hero-container {
-            display: flex !important;
-            flex-direction: column-reverse; /* Video Top, Text Bottom */
-            gap: 1.5rem !important;
-            text-align: center;
-            height: auto;
-          }
-          
-          .hero-title {
-            font-size: 1.75rem !important; /* Reduced from 2.5rem */
-            margin-bottom: 1rem !important;
-          }
-
-          .hero-text {
-            font-size: 0.95rem !important;
-            margin-bottom: 1.5rem !important;
-          }
-
-          /* Video Sizing Optimization */
-          .hero-video-wrapper {
-             max-width: 60% !important; /* Significantly reduced width */
-             margin: 0 auto;
-          }
-
-          .hero-video {
-             max-height: 23vh !important; /* Limit height to fit on screen */
-          }
-          
-          #hero {
-             padding-top: 1rem !important; /* Adjust for mobile navbar */
-             align-items: flex-start !important; /* Start from top */
-             min-height: auto !important; /* Allow content to dictate height on small screens if needed, or keep 100vh */
-             height: auto;
-          }
-          
-          /* Ensure it fits in small height */
-          @media (min-height: 500px) {
-             #hero {
-                min-height: 100vh !important;
-                justify-content: center;
-             }
-          }
-        }
-
-        /* Short phone landscapes: keep everything above the fold */
-        @media (max-width: 968px) and (max-height: 640px) {
-           .hero-title {
-              font-size: 1.5rem !important;
-              margin-bottom: 0.75rem !important;
-           }
-           .hero-text {
-              font-size: 0.85rem !important;
-              margin-bottom: 1.25rem !important;
-              max-width: 100% !important;
-           }
-           .hero-video-wrapper {
-              max-width: 45% !important;
-           }
-           .hero-video {
-              max-height: 16vh !important;
-           }
-        }
-      `}</style>
-        </section >
+                    {/* Portrait */}
+                    <motion.div
+                        className="hero-portrait-frame"
+                        style={{ scale: portraitScale }}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 1.2, delay: 0.2, ease: 'easeOut' }}
+                    >
+                        <div className="hero-portrait">
+                            <img
+                                src={arshooImage}
+                                alt="Arshita Sharma, clinical psychologist, seated in soft natural light"
+                            />
+                        </div>
+                    </motion.div>
+                </div>
+            </div>
+        </section>
     );
 };
 
