@@ -1,13 +1,23 @@
 import { describe, expect, it, vi, beforeEach, afterEach } from 'vitest';
-import { render, screen, fireEvent, act } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import Contact from '../Contact';
 
 describe('Contact', () => {
+  const originalLocation = window.location;
+  let assignMock: ReturnType<typeof vi.fn>;
+
   beforeEach(() => {
-    vi.useFakeTimers();
+    assignMock = vi.fn();
+    Object.defineProperty(window, 'location', {
+      writable: true,
+      value: { assign: assignMock },
+    });
   });
   afterEach(() => {
-    vi.useRealTimers();
+    Object.defineProperty(window, 'location', {
+      writable: true,
+      value: originalLocation,
+    });
   });
 
   it('renders the contact info and form', () => {
@@ -19,19 +29,20 @@ describe('Contact', () => {
     expect(screen.getByRole('button', { name: /send message/i })).toBeInTheDocument();
   });
 
-  it('submits the form and shows a success message', async () => {
+  it('opens a mailto link to the configured email on submit with subject and body', () => {
     render(<Contact />);
     fireEvent.change(screen.getByLabelText(/name/i), { target: { value: 'Priya Rao' } });
     fireEvent.change(screen.getByLabelText(/email/i), { target: { value: 'priya@example.com' } });
+    fireEvent.change(screen.getByLabelText(/subject/i), { target: { value: 'Consultation' } });
     fireEvent.change(screen.getByLabelText(/message/i), { target: { value: 'I would like consultation.' } });
 
     fireEvent.click(screen.getByRole('button', { name: /send message/i }));
-    expect(screen.getByRole('button', { name: /sending/i })).toBeDisabled();
 
-    await act(async () => {
-      vi.advanceTimersByTime(1500);
-    });
-
+    expect(assignMock).toHaveBeenCalledTimes(1);
+    const mailto = assignMock.mock.calls[0][0] as string;
+    expect(mailto).toContain('mailto:thestillspacebyarshita@gmail.com');
+    expect(mailto).toContain('subject=Consultation');
+    expect(mailto).toContain('I%20would%20like%20consultation.');
     expect(screen.getByText(/thank you! your message has been sent/i)).toBeInTheDocument();
   });
 
@@ -39,20 +50,20 @@ describe('Contact', () => {
     render(<Contact />);
     expect(screen.getByLabelText(/name/i)).toBeRequired();
     expect(screen.getByLabelText(/email/i)).toBeRequired();
+    expect(screen.getByLabelText(/subject/i)).toBeRequired();
     expect(screen.getByLabelText(/message/i)).toBeRequired();
   });
 
-  it('clears the form after a successful submit', async () => {
+  it('clears the form after a successful submit', () => {
     render(<Contact />);
     fireEvent.change(screen.getByLabelText(/name/i), { target: { value: 'Priya Rao' } });
     fireEvent.change(screen.getByLabelText(/email/i), { target: { value: 'priya@example.com' } });
+    fireEvent.change(screen.getByLabelText(/subject/i), { target: { value: 'Consultation' } });
     fireEvent.change(screen.getByLabelText(/message/i), { target: { value: 'Hello' } });
     fireEvent.click(screen.getByRole('button', { name: /send message/i }));
-    await act(async () => {
-      vi.advanceTimersByTime(1500);
-    });
     expect(screen.getByLabelText(/name/i)).toHaveValue('');
     expect(screen.getByLabelText(/email/i)).toHaveValue('');
+    expect(screen.getByLabelText(/subject/i)).toHaveValue('');
     expect(screen.getByLabelText(/message/i)).toHaveValue('');
   });
 });

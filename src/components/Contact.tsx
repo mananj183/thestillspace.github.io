@@ -6,6 +6,7 @@ const Contact = () => {
     const [formData, setFormData] = useState({
         name: '',
         email: '',
+        subject: '',
         message: '',
     });
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -19,12 +20,15 @@ const Contact = () => {
         e.preventDefault();
         setIsSubmitting(true);
 
-        setTimeout(() => {
-            console.log('Form submitted:', formData);
-            setIsSubmitting(false);
-            setStatus('success');
-            setFormData({ name: '', email: '', message: '' });
-        }, 1500);
+        const subject = encodeURIComponent(formData.subject || formData.name);
+        const body = encodeURIComponent(
+            `Hi Arshita,\n\n${formData.message}\n\nName: ${formData.name}\nEmail: ${formData.email}`
+        );
+        window.location.assign(`mailto:thestillspacebyarshita@gmail.com?subject=${subject}&body=${body}`);
+
+        setIsSubmitting(false);
+        setStatus('success');
+        setFormData({ name: '', email: '', subject: '', message: '' });
     };
 
     return (
@@ -96,6 +100,17 @@ const Contact = () => {
                                 id="email"
                                 name="email"
                                 value={formData.email}
+                                onChange={handleChange}
+                                required
+                            />
+                        </div>
+                        <div>
+                            <label htmlFor="subject">Subject</label>
+                            <input
+                                type="text"
+                                id="subject"
+                                name="subject"
+                                value={formData.subject}
                                 onChange={handleChange}
                                 required
                             />
