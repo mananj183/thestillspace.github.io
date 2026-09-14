@@ -45,7 +45,7 @@ const Hero = () => {
                                 whileHover={{ y: -2 }}
                                 whileTap={{ y: 0 }}
                             >
-                                Book a session <ArrowRight size={18} aria-hidden="true" />
+                                Book Your Free Call <ArrowRight size={18} aria-hidden="true" />
                             </motion.a>
                         </div>
                     </motion.div>
