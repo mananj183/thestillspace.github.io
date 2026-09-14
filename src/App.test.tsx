@@ -14,9 +14,9 @@ describe('App / Home page', () => {
     expect(screen.getByRole('heading', { name: /about me/i })).toBeInTheDocument();
   });
 
-  it('renders the Services ("My Approach") section', () => {
+  it('renders the Services ("My Services") section', () => {
     render(<App />);
-    expect(screen.getByRole('heading', { name: /my approach/i })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: /my services/i })).toBeInTheDocument();
   });
 
   it('renders the Contact section and its form fields', () => {

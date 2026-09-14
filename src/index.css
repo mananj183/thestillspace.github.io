@@ -541,6 +541,18 @@ button {
   line-height: 1.7;
 }
 
+.service-card-link {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1;
+  color: inherit;
+}
+
+.service-card-link:hover {
+  color: inherit;
+}
+
 /* ── Quote sections ───────────────────────────────────── */
 .quote-section {
   position: relative;

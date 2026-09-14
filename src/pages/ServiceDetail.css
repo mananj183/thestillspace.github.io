@@ -1,0 +1,191 @@
+.service-detail-page {
+    min-height: 100vh;
+}
+
+/* ── Header ─────────────────────────────────────────── */
+.service-header {
+    padding: 6rem 0 3rem;
+    text-align: center;
+}
+
+.service-eyebrow {
+    font-size: 0.8rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.75rem;
+}
+
+.service-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.service-subtitle {
+    color: var(--text-secondary);
+    font-size: 1.125rem;
+    max-width: 640px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+.service-not-found {
+    color: var(--text-secondary);
+    font-size: 1.125rem;
+    margin-bottom: 1.5rem;
+}
+
+/* ── Process stepper ────────────────────────────────── */
+.service-process-section {
+    padding: 5rem 0 3rem;
+}
+
+.service-process-title {
+    font-family: var(--font-heading);
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    color: var(--text-primary);
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 3.5rem;
+}
+
+.service-process {
+    max-width: 640px;
+    margin: 0 auto;
+    /* shorthand for the provided Tailwind container */
+}
+
+.process-row {
+    display: flex;
+}
+
+.process-node-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 1.25rem;
+}
+
+.process-node {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background-color: var(--accent);
+    color: var(--bg-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.process-node:hover {
+    background-color: var(--accent-hover);
+    transform: scale(1.05);
+}
+
+.process-line {
+    width: 2px;
+    background-color: var(--border);
+    flex: 1;
+    min-height: 2.5rem;
+}
+
+.process-content {
+    padding: 0.4rem 0 2.5rem;
+    flex: 1;
+}
+
+.process-content h3 {
+    font-family: var(--font-sans);
+    font-size: 1.125rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--accent);
+    margin-bottom: 0.4rem;
+}
+
+.process-content p {
+    color: var(--text-secondary);
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    max-width: 46ch;
+}
+
+/* ── Fees & session info ───────────────────────────── */
+.service-info-section {
+    padding: 3rem 0 1rem;
+}
+
+.service-info-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.service-info-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.35rem;
+    min-width: 200px;
+    padding: 1.75rem 2.5rem;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    box-shadow: var(--shadow-soft);
+    color: var(--accent);
+    text-align: center;
+}
+
+.service-info-label {
+    font-size: 0.8rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+}
+
+.service-info-value {
+    font-family: var(--font-heading);
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+/* ── CTA button inside info section ─────────────────── */
+.service-cta-button {
+  display: flex;
+  width: fit-content;
+  margin: 2.5rem auto 0;
+  background-color: var(--accent-strong);
+  color: #f8f5f1;
+  border: 1px solid transparent;
+}
+
+.service-cta-button:hover {
+  background-color: var(--accent-hover);
+  color: #fff;
+  border-color: transparent;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-soft);
+}
+
+@media (max-width: 640px) {
+    .service-header {
+        padding: 4.5rem 0 2rem;
+    }
+
+    .service-process-section {
+        padding: 4rem 0 2rem;
+    }
+
+    .service-process {
+        max-width: 100%;
+    }
+}
