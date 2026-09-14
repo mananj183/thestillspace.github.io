@@ -1,8 +1,12 @@
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it, beforeEach } from 'vitest';
 import { render, screen, waitFor } from '@testing-library/react';
 import App from './App';
 
 describe('App / Home page', () => {
+  beforeEach(() => {
+    window.history.pushState({}, '', '/');
+  });
+
   it('renders the hero headline', () => {
     render(<App />);
     expect(screen.getByRole('heading', { name: /space to pause/i })).toBeInTheDocument();

@@ -1,4 +1,4 @@
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import Layout from './components/Layout';
 import Hero from './components/Hero';
@@ -35,6 +35,20 @@ const testimonials = [
   },
 ];
 
+const ROUTER_BASENAME = (() => {
+  const src = Array.from(document.querySelectorAll('script[src]'))
+    .map((s) => s.getAttribute('src') ?? '')
+    .find((s) => s.includes('/assets/'));
+  if (!src) return '';
+  try {
+    const url = new URL(src, window.location.href);
+    const idx = url.pathname.lastIndexOf('/assets/');
+    return idx > 0 ? url.pathname.slice(0, idx) : '';
+  } catch {
+    return '';
+  }
+})();
+
 const Home = () => (
   <>
     <Hero />
@@ -54,7 +68,7 @@ function App() {
         <title>The Still Space | By Arshita</title>
         <meta name="description" content="Find peace and balance with expert clinical psychology services. Depression, anxiety, and trauma recovery." />
       </Helmet>
-      <Router>
+      <Router basename={ROUTER_BASENAME}>
         <Layout>
           <Routes>
             <Route path="/" element={<Home />} />
