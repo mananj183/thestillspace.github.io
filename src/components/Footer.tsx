@@ -1,10 +1,14 @@
+import { Link } from 'react-router-dom';
 import { Instagram, Linkedin, Mail } from 'lucide-react';
 
 const Footer = () => {
     return (
         <footer className="site-footer">
             <div className="container site-footer-inner">
-                <h2 className="footer-wordmark">The Still Space</h2>
+                <h2 className="footer-wordmark">
+                    The Still Space
+                    <span className="footer-wordmark-sub">By Arshita</span>
+                </h2>
 
                 <div className="footer-divider" />
 
@@ -41,7 +45,11 @@ const Footer = () => {
                 </div>
 
                 <div className="footer-bottom">
-                    &copy; {new Date().getFullYear()} The Still Space. All rights reserved.
+                    <span>&copy; 2026 The Still Space</span>
+                    <span className="footer-bottom-sep" aria-hidden="true">|</span>
+                    <span>All rights reserved</span>
+                    <span className="footer-bottom-sep" aria-hidden="true">|</span>
+                    <Link to="/terms-of-service">Terms Of Service</Link>
                 </div>
             </div>
         </footer>

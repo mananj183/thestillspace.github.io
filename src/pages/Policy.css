@@ -1,0 +1,177 @@
+.policy-page {
+    padding: 5rem 0 6rem;
+    min-height: 70vh;
+}
+
+.policy-header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+}
+
+.policy-eyebrow {
+    font-size: 0.8rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.75rem;
+}
+
+.policy-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2.2rem, 4vw, 3rem);
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.policy-subtitle {
+    color: var(--text-secondary);
+    font-size: 1.075rem;
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.policy-body {
+    max-width: 760px;
+    margin: 0 auto;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: clamp(1.75rem, 4vw, 3rem);
+    box-shadow: var(--shadow-soft);
+}
+
+.policy-section {
+    padding: 2.25rem 0 0;
+}
+
+.policy-section:first-child {
+    padding-top: 0;
+}
+
+.policy-section:not(:last-child) {
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 2.25rem;
+    margin-bottom: 2.25rem;
+}
+
+.policy-section-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background-color: var(--accent);
+    color: #fff;
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.policy-section h2 {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    color: var(--accent);
+    margin-bottom: 1rem;
+}
+
+.policy-section p {
+    color: var(--text-secondary);
+    font-size: 1.0625rem;
+    line-height: 1.75;
+    margin-bottom: 1rem;
+}
+
+.policy-section p:last-child {
+    margin-bottom: 0;
+}
+
+.policy-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1rem;
+}
+
+.policy-section li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    color: var(--text-secondary);
+    font-size: 1.0625rem;
+    line-height: 1.75;
+    margin-bottom: 0.75rem;
+}
+
+.policy-section li::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--accent);
+    flex-shrink: 0;
+    margin-top: 0.65em;
+}
+
+.policy-section a {
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.policy-section a:hover {
+    color: var(--accent-hover);
+}
+
+/* Callouts */
+.policy-callout {
+    border-radius: 14px;
+    padding: 1.1rem 1.25rem;
+    margin: 1rem 0 1.5rem;
+}
+
+.policy-callout-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 0.35rem;
+}
+
+.policy-callout-text {
+    font-size: 1.0625rem;
+    font-weight: 500;
+    margin: 0;
+}
+
+.policy-callout--emergency {
+    background-color: #F8EDEA;
+    border: 1px solid #E2B7AE;
+}
+
+.policy-callout--emergency .policy-callout-label {
+    color: #9C3B2E;
+}
+
+.policy-callout--emergency .policy-callout-text {
+    color: #7C3329;
+}
+
+.policy-callout--notice {
+    background-color: var(--accent-soft);
+    border: 1px solid var(--accent-hover);
+}
+
+.policy-callout--notice .policy-callout-label {
+    color: var(--accent);
+    margin-bottom: 0;
+}
+
+@media (max-width: 640px) {
+    .policy-body {
+        padding: 1.5rem;
+    }
+}

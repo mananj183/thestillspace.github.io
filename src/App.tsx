@@ -8,6 +8,7 @@ import Services from './components/Services';
 import FAQ from './components/FAQ';
 import Contact from './components/Contact';
 import AboutMe from './pages/AboutMe';
+import TermsOfService from './pages/TermsOfService';
 
 const quotes = [
   {
@@ -57,6 +58,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about-me" element={<AboutMe />} />
+            <Route path="/terms-of-service" element={<TermsOfService />} />
           </Routes>
         </Layout>
       </Router>
